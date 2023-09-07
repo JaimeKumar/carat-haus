@@ -1,38 +1,776 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+}
+
+:root {
+  --flexFont: clamp(0.75rem, 1.9vw, 1.05rem);
+}
+
+h1 {
+  font-family: 'Montserrat';
+  text-align: left;
+  padding-left: 15px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  transition: transform 0.3s;
+  box-shadow: 0 0 8px #0000003f;
+}
+
+.slideLeft {
+  transform: translateX(150px);
+}
+
+.sideMenu {
+  width: 150px;
+  left: -150px;
+  top: 0;
+  height: auto;
+  padding: 20px;
+  position: absolute;
+  height: 100%;
+  background-color: #eeeeee77;
+  z-index: -1;
+}
+
+li {
+  position: relative;
+}
+
+li::after {
+  position: absolute;
+  content: "";
+  border-bottom: 1px solid;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.4s;
+}
+
+li:hover::after {
+  width: 100%;
+}
+
+.sideMenu ul {
+  list-style: none;
+  font-family: 'Montserrat';
+}
+
+.sideMenu ul li {
+  margin-top: 20px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  /* overflow-y: auto; */
+}
+
+#abouts {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  z-index: 1;
+  bottom: 0;
+}
+
+.aboutTexts {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: calc(100% - 100px)
+}
+
+.aboutTexts p {
+  font-family: 'Montserrat';
+  color: white;
+  position: absolute;
+  width: clamp(30ch, 95%, 70ch);
+  text-align: justify;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  padding: 40px 50px;
+}
+
+.page::-webkit-scrollbar {
+  display: none;
+}
+
+.section {
+  text-align: left;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.section::-webkit-scrollbar {
+  display: none;
+}
+
+.collection {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.7s;
+  backdrop-filter: blur(10px);
+}
+
+.darkBackdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(16px);
+  background-color: #00000066;
+  z-index: 2;
+}
+
+.textSection {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+.textSection:hover + .backdrop {
+  opacity: 0.75;
+}
+
+.textCont {
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: difference;
+}
+
+.section h1 {
+  text-transform: uppercase;
+  font-size: clamp(1.3rem, 4vw, 3rem);
+  padding-left: 18px;
+}
+
+.section p {
+  font-family: 'Montserrat';
+  padding-left: 20px;
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
+  max-width: calc(100% - 20px);
+  text-align: justify;
+}
+
+.cImg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: auto;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.images {
+  width: 100%;
+  height: 100ch;
+  z-index: -1;
+  overflow: hidden;
+  display: inline;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.imgCont {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.imgCont img {
+  position: absolute;
+  /* top: 0; */
+  /* left: 0; */
+  /* bottom: 90%; */
+  width: 100%;
+}
+
+.navbar {
+  width: 100vw;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  justify-content: space-between;
+  z-index: 3;
+  color: white;
+  transition: color 0.6s;
+}
+
+.logo {
+  text-align: center;
+  font-family: 'Montserrat';
+  display: flex;
+  column-gap: 28px;
+  align-items: center;
+  /* height: 40px; */
+  transition: opacity 0.6s;
+}
+
+.homeBlur {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.25) 5%, transparent 20%);
+}
+
+.logo img {
+  height: 45%;
+  transition: filter 0.5s;
+  /* background-color: red; */
+  /* filter: invert(0%) sepia(2%) saturate(0%) hue-rotate(253deg) brightness(103%) contrast(100%); */
+}
+
+.blackImg {
+  filter: invert(100%) sepia(0%) saturate(7490%) hue-rotate(66deg) brightness(106%) contrast(100%);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.logoText::before {
+  position: absolute;
+  left: -14px;
+  border-left: 2px solid;
+  content: "";
+  height: 90%;
+  top: 5%;
+  opacity: 0.8;
+}
+
+.logo h3 {
+  font-weight: normal;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Cinzel';
+  white-space: nowrap;
+}
+
+.logo span {
+  margin: 0;
+  letter-spacing: 8px;
+}
+
+.navbar ul {
+  list-style: none;
+  font-family: 'Montserrat';
+  display: flex;
+  column-gap: 40px;
+}
+
+.navbar ul li {
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.menuButton {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px; 
+}
+
+.loading {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  animation: rotate 0.7s linear infinite;
+}
+
+.reciept {
+  font-family: 'Montserrat';
+}
+
+.reciept h1 {
+  padding: 0;
+}
+
+.failMessage {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 60ch;
+  text-align: justify;
+  box-shadow: 0 0 10px #000000;
+}
+
+.failMessage p {
+  margin-bottom: 5px;
+}
+
+.failMessage h1 {
+  padding: 0;
+}
+
+.failMessage button {
+  margin-top: 15px;
+  background-color: #4788c8;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+.centerCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timepicker {
+  position: relative;
+  z-index: 4;
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px #00000033;
+  border-radius: 10px;
+  width: clamp(300px, 90vw, 700px);
+  margin: 10px 0px;
+  padding: 10px 0px;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
+  background-color: white;
+}
+
+.dialog span {
+  text-align: left;
+  width: 94%;
+  display: block;
+  font-family: 'Montserrat';
+  padding: 5px;
+  margin: 2px 0px;
+  font-size: var(--flexFont);
+}
+
+.dialog input {
+  border: 1px solid #9f9f9f;
+  border-radius: 5px;
+  height: 30px;
+  width: 93%;
+  margin: 0px 0 15px 0;
+  padding-left: 8px;
+  font-family: 'Montserrat';
+}
+
+.smallButton {
+  border-radius: 6px;
+  background-color: #e6e6e6;
+  padding: 4px;
+  min-width: 60px;
+  font-family: 'Montserrat';
+  color: #454545;
+  border: none;
+  align-self: flex-start;
+  margin: 8px 0 16px 2.5%;
+  cursor: pointer;
+}
+
+.smallMsg {
+  text-align: left;
+  width: 94%;
+  display: block;
+  font-family: 'Montserrat';
+  padding: 5px;
+  margin: 0 0 10px 0;
+  color: #515151;
+}
+
+.errorMsg {
+  text-align: left;
+  width: 94%;
+  padding: 5px;
+  margin: -5px 0 0 0;
+  font-size: 0.8rem;
+  color: #e80000;
+  display: none;
+}
+
+.timeslots {
+  margin: 5px 0 15px 0;
+  display: grid;
+  width: 94%;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 5px;
+  justify-content: center;
+}
+
+.slot {
+  border-radius: 6px;
+  background-color: #e6e6e6;
+  padding: 4px;
+  font-family: 'Montserrat';
+  color: #454545;
+  text-align: center;
+  cursor: pointer;
+}
+
+.requestCallButton {
+  font-family: 'Montserrat';
+  background-color: #5697d7;
+  width: 94%;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  padding: 7px;
+  margin: 10px 0;
+  font-size: 1.06rem;
+  box-shadow: 0 0 10px #00000033;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.selected {
+  background-color: #c0ccd9;
+}
+
+.appointmentsCont {
+  height: 75vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: white;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: #2f2f2f;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewBookings {
+  width: clamp(300px, 90vw, 850px);
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+
+tr {
+  border-radius: 6px;
+  font-family: 'Montserrat';
+  color: #454545;
+  text-align: center;
+  width: 95%;
+  box-shadow: 0 0 5px #00000044;
+  min-height: 50px;
+}
+
+td {
+  padding: 10px clamp(7px, 1.5vw, 10px);
+  font-size: var(--flexFont);
+}
+
+.apptButton {
+  cursor: pointer;
+}
+
+#emailNotif {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #0000005c;
+  padding: 15px;
+  opacity: 0;
+  background-color: white;
+}
+
+#deletePrompt {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000055;
+  backdrop-filter: blur(5px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteBox {
+  border-radius: 5px;
+  box-shadow: 0 0 5px #00000099;
+  width: clamp(300px, 90vw, 500px);
+  background-color: white;
+  padding: 30px 15px;
+  text-align: center;
+  font-family: 'Montserrat';
+}
+
+.buttonrow {
+  margin-top: 40px;
+  display: flex;
+  column-gap: 5px;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.buttonrow button {
+  cursor: pointer;
+}
+
+.btnDel {
+  background-color: #772525;
+  color: #fff;
+}
+
+.buttonrow button {
+  padding: 8px 30px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: 'Montserrat';
+}
+
+.homeVid {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* CALENDER */
+
+.react-calendar {
+  width: clamp(300px, 50vw, 450px);
+  max-width: 100%;
+  background: white;
+  box-shadow: 0 0 10px #00000055;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  line-height: 1.125em;
+  border-radius: 7px;
+  padding-bottom: 5px;
+  overflow: hidden;
+  z-index: 4;
+}
+
+.react-calendar--doubleView {
+  width: 700px;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer {
+  display: flex;
+  margin: -0.5em;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer > * {
+  width: 50%;
+  margin: 0.5em;
+}
+
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.react-calendar button {
+  margin: 0;
+  border: 0;
+  outline: none;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+.react-calendar button:enabled:hover {
+  cursor: pointer;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  height: 44px;
+  margin-bottom: 1em;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+}
+
+.react-calendar__navigation button:disabled {
+  background-color: #f0f0f0;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #e6e6e6;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75em;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  padding: 0.5em;
+}
+
+.react-calendar__month-view__weekNumbers .react-calendar__tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: #164387;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #757575;
+}
+
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+  padding: 2em 0.5em;
+}
+
+.react-calendar__tile {
+  max-width: 100%;
+  padding: 10px 6.6667px;
+  background: none;
+  text-align: center;
+  line-height: 16px;
+  border-radius: 0px;
+  padding: 13px 0px;
+
+}
+
+.react-calendar__tile:disabled {
+  background-color: #f0f0f0;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #e6e6e6;
+}
+
+.react-calendar__tile--now {
+  background: #c1ced4;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #9ac0d2;
+}
+
+.react-calendar__tile--hasActive {
+  background: #566e86;
+}
+
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  background: #a9d4ff;
+}
+
+.react-calendar__tile--active {
+  background: #006edc;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #1087ff;
 }
 
-@keyframes App-logo-spin {
-  from {
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #e6e6e6;
+}
+
+@media only screen and (max-width: 900px) {
+  .navbar ul {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+  .menuButton {
+    display: flex;;
+  }
+
+  .cImg {
+    height: calc(100% + 200px);
+    width: auto;
+  }
+}
+
+@keyframes rotate {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
