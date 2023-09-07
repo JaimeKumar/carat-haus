@@ -94,8 +94,11 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
 
   function manageScroll(e) {
     deltaScroll += e.deltaY;
+    console.log('scroll')
+    
     if (Math.abs(deltaScroll) < 400) return;
     
+    console.log('delta scroll')
     deltaScroll = 0;
     let dir = e.deltaY / Math.abs(e.deltaY);
 
@@ -170,6 +173,7 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
       e.preventDefault();
       manageScroll(e)
     })
+    console.log('homepage component loaded')
   }, [])
 
   useEffect(() => {
