@@ -225,7 +225,10 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
   return (
     <div className='page' id='home'>
       <div className="section" style={{overflowY: 'hidden'}}>
-        <video id='vid' className='homeVid' type="video/mp4" src={vid} autoPlay={true} loop muted playsInline></video>
+      <video autoplay loop muted playsinline class="homeVid">
+        <source src={vid} type="video/mp4" />
+      </video>
+        {/* <video id='vid' className='homeVid' type="video/mp4" src={vid} autoPlay={true} loop muted playsInline></video> */}
       </div>
       <div className="section" id='collections'>
         {collections.map((c, i) => {
