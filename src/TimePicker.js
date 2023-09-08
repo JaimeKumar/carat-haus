@@ -30,7 +30,7 @@ export default function TimePicker({date, backToCalendar}) {
   const [takenSlots, setTaken] = useState([])
   
   useEffect(() => {
-    axios.get('http://localhost:4000/getBookings')
+    axios.get('https://ch-server-ul9n.onrender.com/getBookings')
     .then(res => {
       setTaken(res.data.filter(s=>format(new Date(s.timeslot), 'do MMM y')===format(new Date(date), 'do MMM y')))
     })
@@ -83,7 +83,7 @@ export default function TimePicker({date, backToCalendar}) {
 
     if (time && name && email && number) {
       setLoading(true)
-      axios.post('http://localhost:4000/book', {
+      axios.post('https://ch-server-ul9n.onrender.com/book', {
       // date: date,
       name: name,
       time: time,

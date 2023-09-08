@@ -83,7 +83,11 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
     }
   ]
   var deltaScroll = 0;
+  var deltaSwipe = 0;
+  var swipeStart = null;
 
+  // const [swipeStart, setStart] = useState(null)
+  // const [swipeDelta, setDelta] = useState(0)
   const [atTop, setAtTop] = useState(true)
   const [scrollPos, setScrollPos] = useState(0);
   const slidePos = useRef(2)
@@ -92,15 +96,15 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
   $(`#img${scrollPos-1}0`).css('top', ($(`#img${scrollPos-1}0`).height()/-2) + (sh/2) + 100)
   $(`#img${scrollPos-1}1`).css('top', ($(`#img${scrollPos-1}1`).height()/-2) + (sh/2) + 100)
 
-  function manageScroll(e) {
-    deltaScroll += e.deltaY;
-    console.log('scroll')
+  function manageScroll(delta) {
+    console.log('scroll', delta)
     
-    if (Math.abs(deltaScroll) < 400) return;
+    if (Math.abs(delta) < 400) return;
     
-    console.log('delta scroll')
+    // console.log('delta scroll')
     deltaScroll = 0;
-    let dir = e.deltaY / Math.abs(e.deltaY);
+    deltaSwipe = 0;
+    let dir = delta / Math.abs(delta);
 
     $(`#img${scrollPos-1}0`).stop();
     $(`#img${scrollPos-1}1`).stop();
@@ -171,9 +175,30 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
   useEffect(() => {
     $('#home')[0].addEventListener('wheel', e => {
       e.preventDefault();
-      manageScroll(e)
+      deltaScroll += e.deltaY;
+
+      manageScroll(deltaScroll)
     })
-    console.log('homepage component loaded')
+  
+    $('#home')[0].addEventListener('touchstart', e => {
+      e.preventDefault();
+      swipeStart = e.touches[0].clientY;
+    })
+    
+    $('#home')[0].addEventListener('touchend', e => {
+      e.preventDefault();
+      deltaSwipe = e.changedTouches[0].clientY - swipeStart
+      manageScroll(deltaSwipe * -4.5);
+      deltaSwipe = 0;
+      swipeStart = null;
+    })
+
+    // $('#home')[0].addEventListener('touchmove', e => {
+    //   // e.preventDefault();
+    //   if (swipeStart) {
+    //     deltaSwipe = e.touches[0].clientY - swipeStart;
+    //   }
+    // })
   }, [])
 
   useEffect(() => {

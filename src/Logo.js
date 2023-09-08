@@ -27,7 +27,7 @@ export default function Logo({logoClick, opac, type}) {
     style.opacity = opac;
   return (
     <>
-        {(type==='home') ? <div className="homeBlur"></div> : <></> }
+        {(type==='home') ? <div className="homeBlur" style={{opacity: opac}}></div> : <></> }
         <div className="logo" onClick={logoClick} style={style}>
             <img id='logoImg' src={diamond} alt="" />
             <div className="logoText">

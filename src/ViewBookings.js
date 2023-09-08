@@ -3,7 +3,7 @@ import Appointment from './Appointment';
 import $ from 'jquery';
 
 
-export default function ViewBookings({bookings, del, close}) {
+export default function ViewBookings({bookings, del, close, refreshing}) {
   bookings.sort((a, b) => new Date(a.timeslot) - new Date(b.timeslot))
   
   var sw = window.innerWidth;
@@ -38,25 +38,32 @@ export default function ViewBookings({bookings, del, close}) {
   return (
     <div className="centerCont">
       <div className="darkBackdrop" onClick={(e) => {if (e.target === e.currentTarget) close()}}></div>
-      <div className="appointmentsCont">
-        <h1>Appointments</h1>
-        <div id="deletePrompt">
-          <div className="deleteBox">
-            <span>Are you sure you want to delete this appointment?</span>
-            <div className="buttonrow">
-              <button onClick={cancelDel}>Cancel</button>
-              <button className='btnDel' onClick={confirmDel}>Delete</button>
-            </div>
+      <div id="deletePrompt">
+        <div className="deleteBox">
+          <span>Are you sure you want to delete this appointment?</span>
+          <div className="buttonrow">
+            <button onClick={cancelDel}>Cancel</button>
+            <button className='btnDel' onClick={confirmDel}>Delete</button>
           </div>
         </div>
-        <div id="emailNotif">
-          Email copied to clipboard.
-        </div>
+      </div>
+      <div className="appointmentsCont">
+        {refreshing?<div className="bookingsRefresh">
+          <p>Reloading</p>
+          <div className="ellipse" id='elips0'></div>
+          <div className="ellipse" id='elips1'></div>
+          <div className="ellipse" id='elips2'></div>
+        </div>:<></>}
+        <h1>Appointments</h1>
+        
         <table className='viewBookings'>
           {bookings.map(booking => {
             return <Appointment appointment={booking} deleteAppt={openDel} sw={sWidth} emailNotif={notif} />
           })}
         </table>
+      </div>
+      <div id="emailNotif">
+          Email copied to clipboard.
       </div>
     </div>
   )
