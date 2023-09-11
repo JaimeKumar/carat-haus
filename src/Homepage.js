@@ -3,12 +3,12 @@ import $ from 'jquery';
 
 import vid from './content/carat-haus-vid.mp4'
 
-import ring1 from './content/rings/carat23.jpeg'
+import ring1 from './content/rings/carat29.jpeg'
 import ring2 from './content/rings/carat32.jpeg'
 import ring3 from './content/rings/carat25.jpeg'
 import ring4 from './content/rings/carat26.jpeg'
 import ring5 from './content/rings/carat27.jpeg'
-import ring6 from './content/rings/carat33.jpeg'
+import ring6 from './content/rings/carat31.jpeg'
 
 import tanPic1 from './content/tan collec/ctc1.jpeg'
 import tanPic2 from './content/tan collec/ctc2.jpeg'
@@ -35,9 +35,9 @@ import nat1 from './content/diamonds/cd1.jpeg'
 import nat2 from './content/diamonds/cd2.jpeg'
 import nat3 from './content/diamonds/cd3.jpeg'
 
-import lab1 from './content/diamonds/cd4.jpeg'
+import lab1 from './content/diamonds/cd6.jpeg'
 import lab2 from './content/diamonds/cd5.jpeg'
-import lab3 from './content/diamonds/cd6.jpeg'
+import lab3 from './content/diamonds/cd4.jpeg'
 
 export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhite}) {
   const wb = ['white', 'black']
@@ -82,92 +82,109 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
       color: 1
     }
   ]
-  var deltaScroll = 0;
-  var deltaSwipe = 0;
+  var deltaY = 0;
+  var deltaX = 0;
   var swipeStart = null;
 
-  // const [swipeStart, setStart] = useState(null)
-  // const [swipeDelta, setDelta] = useState(0)
-  const [atTop, setAtTop] = useState(true)
-  const [scrollPos, setScrollPos] = useState(0);
+  const atTop = useRef(true)
+  const scrollPos = useRef(0)
   const slidePos = useRef(2)
 
   const sh = window.innerHeight;
-  $(`#img${scrollPos-1}0`).css('top', ($(`#img${scrollPos-1}0`).height()/-2) + (sh/2) + 100)
-  $(`#img${scrollPos-1}1`).css('top', ($(`#img${scrollPos-1}1`).height()/-2) + (sh/2) + 100)
+  const sw = window.innerWidth;
+  $(`#img${scrollPos.current}0`).css('top', ($(`#img${scrollPos.current}0`).height()/-2) + (sh/2) + 100)
+  $(`#img${scrollPos.current}1`).css('top', ($(`#img${scrollPos.current}1`).height()/-2) + (sh/2) + 100)
 
-  function manageScroll(delta) {
-    console.log('scroll', delta)
-    
-    if (Math.abs(delta) < 400) return;
-    
-    // console.log('delta scroll')
-    deltaScroll = 0;
-    deltaSwipe = 0;
-    let dir = delta / Math.abs(delta);
+  function vertScroll() {
+    let dir = deltaY / Math.abs(deltaY);
 
-    $(`#img${scrollPos-1}0`).stop();
-    $(`#img${scrollPos-1}1`).stop();
+    console.log(scrollPos.current)
+ 
+    deltaY = 0;
+
+    $(`#img${scrollPos.current-1}0`).stop();
+    $(`#img${scrollPos.current-1}1`).stop();
     
     slidePos.current = 2;
 
-    setScrollPos((prevScrollPos) => {
-      let newScrollPos = prevScrollPos + dir;
-      
-      if (newScrollPos < 0) {
-        newScrollPos = 0;
-      } else if (newScrollPos > 6) {
-        newScrollPos = 6;
-      }
-      
-      return newScrollPos;
-    });
+    let newScrollPos = scrollPos.current + dir;
+    
+    if (newScrollPos < 0) {
+      newScrollPos = 0;
+    } else if (newScrollPos > 6) {
+      newScrollPos = 6;
+    }
+    
+    scrollPos.current = newScrollPos;
+    scrollPosChange();
   }
 
-  function animate() {
-    $(`#img${scrollPos-1}0`).stop();
-    $(`#img${scrollPos-1}1`).stop();
-    $(`#img${scrollPos-1}0`).animate({top: ($(`#img${scrollPos-1}0`).height()/-2) + (sh/2) - 100}, 24000, 'linear', () => {
-      $(`#img${scrollPos-1}1`).animate({opacity: 1}, 750, 'linear', () => {
-        if (slidePos.current > collections[scrollPos-1].imgs.length-1) {
-          slidePos.current = 0;
-        }
-        $(`#img${scrollPos-1}0`).attr('src', collections[scrollPos-1].imgs[slidePos.current])
-        $(`#img${scrollPos-1}0`).css('top', ($(`#img${scrollPos-1}0`).height()/-2) + (sh/2) + 100)
-        slidePos.current = slidePos.current + 1;
-        $(`#img${scrollPos-1}1`).animate({top: ($(`#img${scrollPos-1}1`).height()/-2) + (sh/2) - 100}, 24000, 'linear', () => {
-          $(`#img${scrollPos-1}1`).animate({opacity: 0}, 750, 'linear', () => {
-            if (slidePos.current > collections[scrollPos-1].imgs.length-1) {
-              slidePos.current = 0;
-            }
-            $(`#img${scrollPos-1}1`).attr('src', collections[scrollPos-1].imgs[slidePos.current])
-            $(`#img${scrollPos-1}1`).css('top', ($(`#img${scrollPos-1}1`).height()/-2) + (sh/2) + 100)
-            slidePos.current = slidePos.current + 1;
-            animate();
-          })
-        })
+  function horzScroll() {
+    $(`#img${scrollPos.current-1}0`).stop(true, false);
+    $(`#img${scrollPos.current-1}1`).stop(true, false);
+    if (+$(`#img${scrollPos.current-1}1`).css('opacity') === 1) {
+      act3();
+    } else if (+$(`#img${scrollPos.current-1}1`).css('opacity') === 0) {
+      act2();
+    } else {
+      $(`#img${scrollPos.current-1}1`).animate({opacity: 0}, 750, 'linear', () => {
+        act2()
       })
+    }
+  }
+
+  function act1() {
+    $(`#img${scrollPos.current-1}0`).stop();
+    $(`#img${scrollPos.current-1}1`).stop();
+    $(`#img${scrollPos.current-1}0`).animate({top: ($(`#img${scrollPos.current-1}0`).height()/-2) + (sh/2) - 100}, 24000, 'linear', () => {
+      act2();
+    })
+  }
+
+  function act2() {
+    $(`#img${scrollPos.current-1}1`).animate({opacity: 1}, 750, 'linear', () => {
+      if (slidePos.current > collections[scrollPos.current-1].imgs.length-1) {
+        slidePos.current = 0;
+      }
+      $(`#img${scrollPos.current-1}0`).attr('src', collections[scrollPos.current-1].imgs[slidePos.current])
+      $(`#img${scrollPos.current-1}0`).css('top', ($(`#img${scrollPos.current-1}0`).height()/-2) + (sh/2) + 100)
+      slidePos.current = slidePos.current + 1;
+      $(`#img${scrollPos.current-1}1`).animate({top: ($(`#img${scrollPos.current-1}1`).height()/-2) + (sh/2) - 100}, 24000, 'linear', () => {
+        act3();
+      })
+    })
+  }
+
+  function act3() {
+    $(`#img${scrollPos.current-1}1`).animate({opacity: 0}, 750, 'linear', () => {
+      if (slidePos.current > collections[scrollPos.current-1].imgs.length-1) {
+        slidePos.current = 0;
+      }
+      $(`#img${scrollPos.current-1}1`).attr('src', collections[scrollPos.current-1].imgs[slidePos.current])
+      $(`#img${scrollPos.current-1}1`).css('top', ($(`#img${scrollPos.current-1}1`).height()/-2) + (sh/2) + 100)
+      slidePos.current = slidePos.current + 1;
+      act1();
     })
   }
 
   function scroll() {
     $('#home')[0].scrollTo({
       left: 0,
-      top: scrollPos * window.innerHeight,
+      top: scrollPos.current * window.innerHeight,
       behavior: 'smooth'
     })
 
-    if (atTop && scrollPos !== 0) {
+    if (atTop.current && scrollPos.current !== 0) {
       scrolled()
-      setAtTop(false)
-    } else if (!atTop && scrollPos === 0) {
+      atTop.current = false;
+    } else if (!atTop.current && scrollPos.current === 0) {
       scrolled();
-      setAtTop(true)
+      atTop.current = true;
     }
 
-    if (scrollPos !== 0) {
+    if (scrollPos.current !== 0) {
       setTimeout(() => {
-        animate();
+        act1();
       }, 500)
     }
   }
@@ -175,21 +192,34 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
   useEffect(() => {
     $('#home')[0].addEventListener('wheel', e => {
       e.preventDefault();
-      deltaScroll += e.deltaY;
+      deltaY += e.deltaY;
+      let fraction = deltaY / sh;
+      if (Math.abs(fraction) < 0.4) return;
+      vertScroll()
+    })
 
-      manageScroll(deltaScroll)
+    $('#home')[0].addEventListener('click', e => {
+      horzScroll();
     })
   
     $('#home')[0].addEventListener('touchstart', e => {
       e.preventDefault();
-      swipeStart = e.touches[0].clientY;
+      swipeStart = {x: e.touches[0].clientX, y: e.touches[0].clientY};
     })
     
     $('#home')[0].addEventListener('touchend', e => {
       e.preventDefault();
-      deltaSwipe = e.changedTouches[0].clientY - swipeStart
-      manageScroll(deltaSwipe * -4.5);
-      deltaSwipe = 0;
+      deltaY = e.changedTouches[0].clientY - swipeStart.y
+      deltaX = e.changedTouches[0].clientX - swipeStart.x
+      let fractionY = deltaY / sh;
+      let fractionX = deltaX / sw;
+      if (Math.abs(fractionY) > 0.4) {
+        vertScroll();
+      } else if (fractionX > 0.4) {
+        horzScroll();
+      }
+      deltaX = 0;
+      deltaY = 0;
       swipeStart = null;
     })
 
@@ -201,25 +231,30 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
     // })
   }, [])
 
-  useEffect(() => {
-    if (scrollPos > 3) {
+  function scrollPosChange() {
+
+    if (scrollPos.current > 3) {
       makeNavBlack();
     } else {
       makeNavWhite();
     }
     
-    $(`#img${scrollPos-1}0`).stop();
-    $(`#img${scrollPos-1}1`).stop();
-    $(`#img${scrollPos-1}0`).css('top', ($(`#img${scrollPos-1}0`).height()/-2) + (sh/2) + 100)
-    $(`#img${scrollPos-1}1`).css('top', ($(`#img${scrollPos-1}1`).height()/-2) + (sh/2) + 100)
+    $(`#img${scrollPos.current-1}0`).stop();
+    $(`#img${scrollPos.current-1}1`).stop();
+    $(`#img${scrollPos.current-1}0`).css('top', ($(`#img${scrollPos.current-1}0`).height()/-2) + (sh/2) + 100)
+    $(`#img${scrollPos.current-1}1`).css('top', ($(`#img${scrollPos.current-1}1`).height()/-2) + (sh/2) + 100)
     
     scroll()
-  }, [scrollPos])
+  }
 
   useEffect(() => {
-    setScrollPos(0)
-    deltaScroll = 0;
-    setAtTop(true)
+    $(`#img${scrollPos.current-1}0`).stop();
+    $(`#img${scrollPos.current-1}1`).stop();
+    scrollPos.current = 0;
+    scrollPosChange();
+    deltaY = 0;
+    atTop.current = true;
+    // setAtTop(true)
   }, [forceToTop])
   
   return (
@@ -228,7 +263,7 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
       {/* <video autoplay loop muted playsinline className="homeVid">
         <source src={vid} type="video/mp4" />
       </video> */}
-        <video id='vid' className='homeVid' type="video/mp4" src={vid} autoPlay={true} loop muted></video>
+        <video id='vid' className='homeVid' type="video/mp4" src={vid} controls={false} autoPlay loop muted playsInline></video>
       </div>
       <div className="section" id='collections'>
         {collections.map((c, i) => {
