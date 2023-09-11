@@ -103,8 +103,6 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
     
     slidePos.current = 2;
 
-    console.log(scrollPos.current, typeof scrollPos.current)
-
     let newScrollPos = scrollPos.current + dir;
     
     if (newScrollPos < 0) {
@@ -127,12 +125,19 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
     $(`#img${scrollPos.current-1}1`).stop();
     $(`#img${scrollPos.current-1}0`).css('top', ($(`#img${scrollPos.current-1}0`).height()/-2) + (sh/2) + 100)
     $(`#img${scrollPos.current-1}1`).css('top', ($(`#img${scrollPos.current-1}1`).height()/-2) + (sh/2) + 100)
+
+    console.log('prescroll: ' + scrollPos.current)
     
-    $('#home')[0].scrollTo({
-      left: 0,
-      top: scrollPos.current * window.innerHeight,
-      behavior: 'smooth'
-    })
+    $('#home').scrollTop(scrollPos.current * window.innerHeight)
+
+    // $('#home')[0].scrollTo({
+    //   left: 0,
+    //   top: scrollPos.current * window.innerHeight,
+    //   behavior: 'smooth'
+    // })
+    
+    console.log(scrollPos.current * window.innerHeight)
+    console.log($('#home').scrollTop())
 
     if (atTop.current && scrollPos.current !== 0) {
       scrolled()
@@ -201,10 +206,16 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
     $('#home')[0].addEventListener('wheel', e => {
       e.preventDefault();
       deltaY += e.deltaY;
-      let fraction = deltaY / sh;
-      if (Math.abs(fraction) < 0.4) return;
-      vertScroll()
-      deltaY = 0;
+      deltaX += e.deltaX;
+      let fractionY = deltaY / sh;
+      let fractionX = deltaX / sw;
+      if (Math.abs(fractionY) > 0.6) {
+        vertScroll()
+        deltaY = 0;
+      } else if (Math.abs(fractionX) > 0.5) {
+        horzScroll();
+        deltaX = 0;
+      }
     })
 
     $('#home')[0].addEventListener('click', e => {
@@ -224,11 +235,11 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
       let fractionX = deltaX / sw;
       if (Math.abs(fractionY) > 0.2) {
         vertScroll();
+        deltaY = 0;
       } else if (fractionX > 0.2) {
         horzScroll();
+        deltaX = 0;
       }
-      deltaX = 0;
-      deltaY = 0;
       swipeStart = null;
     })
 

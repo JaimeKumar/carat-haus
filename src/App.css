@@ -9,6 +9,8 @@
 
 body {
   background-color: black;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 :root {
@@ -90,6 +92,7 @@ li:hover::after {
   position: absolute;
   bottom: 0;
   overflow: hidden;
+  scroll-behavior: smooth;
   /* overflow-y: auto; */
 }
 
