@@ -614,6 +614,13 @@ td {
   transform: translate(-50%, -50%);
 }
 
+.vidCont {
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
 .loginBox {
   background-color: white;
   z-index: 2;
@@ -857,6 +864,10 @@ td {
   .cImg {
     height: calc(100% + 200px);
     width: auto;
+  }
+
+  .page {
+    overflow: auto;
   }
 }
 

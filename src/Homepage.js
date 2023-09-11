@@ -121,12 +121,16 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
       makeNavWhite();
     }
     
+    scroll();
+  }
+
+  function scroll() {
     $(`#img${scrollPos.current-1}0`).stop();
     $(`#img${scrollPos.current-1}1`).stop();
     $(`#img${scrollPos.current-1}0`).css('top', ($(`#img${scrollPos.current-1}0`).height()/-2) + (sh/2) + 100)
     $(`#img${scrollPos.current-1}1`).css('top', ($(`#img${scrollPos.current-1}1`).height()/-2) + (sh/2) + 100)
 
-    console.log('prescroll: ' + scrollPos.current)
+    // console.log('prescroll: ' + scrollPos.current)
     
     $('#home').scrollTop(scrollPos.current * window.innerHeight)
 
@@ -136,8 +140,8 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
     //   behavior: 'smooth'
     // })
     
-    console.log(scrollPos.current * window.innerHeight)
-    console.log($('#home').scrollTop())
+    // console.log(scrollPos.current * window.innerHeight)
+    // console.log($('#home').scrollTop())
 
     if (atTop.current && scrollPos.current !== 0) {
       scrolled()
@@ -221,27 +225,32 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
     $('#home')[0].addEventListener('click', e => {
       horzScroll();
     })
-  
-    $('#home')[0].addEventListener('touchstart', e => {
-      e.preventDefault();
-      swipeStart = {x: e.touches[0].clientX, y: e.touches[0].clientY};
-    })
-    
+
     $('#home')[0].addEventListener('touchend', e => {
-      e.preventDefault();
-      deltaY = -(e.changedTouches[0].clientY - swipeStart.y)
-      deltaX = -(e.changedTouches[0].clientX - swipeStart.x)
-      let fractionY = deltaY / sh;
-      let fractionX = deltaX / sw;
-      if (Math.abs(fractionY) > 0.2) {
-        vertScroll();
-        deltaY = 0;
-      } else if (fractionX > 0.2) {
-        horzScroll();
-        deltaX = 0;
-      }
-      swipeStart = null;
+      scrollPos.current = Math.round($('#home').scrollTop() / window.innerHeight);
+      scroll();
     })
+  
+    // $('#home')[0].addEventListener('touchstart', e => {
+    //   e.preventDefault();
+    //   swipeStart = {x: e.touches[0].clientX, y: e.touches[0].clientY};
+    // })
+    
+    // $('#home')[0].addEventListener('touchend', e => {
+    //   e.preventDefault();
+    //   deltaY = -(e.changedTouches[0].clientY - swipeStart.y)
+    //   deltaX = -(e.changedTouches[0].clientX - swipeStart.x)
+    //   let fractionY = deltaY / sh;
+    //   let fractionX = deltaX / sw;
+    //   if (Math.abs(fractionY) > 0.2) {
+    //     vertScroll();
+    //     deltaY = 0;
+    //   } else if (fractionX > 0.2) {
+    //     horzScroll();
+    //     deltaX = 0;
+    //   }
+    //   swipeStart = null;
+    // })
 
     // $('#home')[0].addEventListener('touchmove', e => {
     //   // e.preventDefault();
@@ -262,8 +271,11 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
   
   return (
     <div className='page' id='home'>
-      <div className="section" style={{overflowY: 'hidden'}}>
-        <video id='vid' className='homeVid' type="video/mp4" src={vid} controls={false} autoPlay loop muted playsInline></video>
+      <div className="section">
+      {/* <div className="section" style={{overflowY: 'hidden'}}> */}
+        <div className="vidCont">
+          <video id='vid' className='homeVid' type="video/mp4" src={vid} controls={false} autoPlay loop muted playsInline></video>
+        </div>
       </div>
       <div className="section" id='collections'>
         {collections.map((c, i) => {
