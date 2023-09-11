@@ -97,15 +97,13 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
 
   function vertScroll() {
     let dir = deltaY / Math.abs(deltaY);
-
-    console.log(scrollPos.current)
- 
-    deltaY = 0;
-
+    
     $(`#img${scrollPos.current-1}0`).stop();
     $(`#img${scrollPos.current-1}1`).stop();
     
     slidePos.current = 2;
+
+    console.log(scrollPos.current, typeof scrollPos.current)
 
     let newScrollPos = scrollPos.current + dir;
     
@@ -115,8 +113,40 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
       newScrollPos = 6;
     }
     
-    scrollPos.current = newScrollPos;
-    scrollPosChange();
+    if (!isNaN(newScrollPos)) {
+      scrollPos.current = newScrollPos;
+    }
+
+    if (scrollPos.current > 3) {
+      makeNavBlack();
+    } else {
+      makeNavWhite();
+    }
+    
+    $(`#img${scrollPos.current-1}0`).stop();
+    $(`#img${scrollPos.current-1}1`).stop();
+    $(`#img${scrollPos.current-1}0`).css('top', ($(`#img${scrollPos.current-1}0`).height()/-2) + (sh/2) + 100)
+    $(`#img${scrollPos.current-1}1`).css('top', ($(`#img${scrollPos.current-1}1`).height()/-2) + (sh/2) + 100)
+    
+    $('#home')[0].scrollTo({
+      left: 0,
+      top: scrollPos.current * window.innerHeight,
+      behavior: 'smooth'
+    })
+
+    if (atTop.current && scrollPos.current !== 0) {
+      scrolled()
+      atTop.current = false;
+    } else if (!atTop.current && scrollPos.current === 0) {
+      scrolled();
+      atTop.current = true;
+    }
+
+    if (scrollPos.current !== 0) {
+      setTimeout(() => {
+        act1();
+      }, 500)
+    }
   }
 
   function horzScroll() {
@@ -166,28 +196,6 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
       act1();
     })
   }
-
-  function scroll() {
-    $('#home')[0].scrollTo({
-      left: 0,
-      top: scrollPos.current * window.innerHeight,
-      behavior: 'smooth'
-    })
-
-    if (atTop.current && scrollPos.current !== 0) {
-      scrolled()
-      atTop.current = false;
-    } else if (!atTop.current && scrollPos.current === 0) {
-      scrolled();
-      atTop.current = true;
-    }
-
-    if (scrollPos.current !== 0) {
-      setTimeout(() => {
-        act1();
-      }, 500)
-    }
-  }
   
   useEffect(() => {
     $('#home')[0].addEventListener('wheel', e => {
@@ -196,6 +204,7 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
       let fraction = deltaY / sh;
       if (Math.abs(fraction) < 0.4) return;
       vertScroll()
+      deltaY = 0;
     })
 
     $('#home')[0].addEventListener('click', e => {
@@ -209,13 +218,13 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
     
     $('#home')[0].addEventListener('touchend', e => {
       e.preventDefault();
-      deltaY = e.changedTouches[0].clientY - swipeStart.y
-      deltaX = e.changedTouches[0].clientX - swipeStart.x
+      deltaY = -(e.changedTouches[0].clientY - swipeStart.y)
+      deltaX = -(e.changedTouches[0].clientX - swipeStart.x)
       let fractionY = deltaY / sh;
       let fractionX = deltaX / sw;
-      if (Math.abs(fractionY) > 0.4) {
+      if (Math.abs(fractionY) > 0.2) {
         vertScroll();
-      } else if (fractionX > 0.4) {
+      } else if (fractionX > 0.2) {
         horzScroll();
       }
       deltaX = 0;
@@ -231,38 +240,18 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
     // })
   }, [])
 
-  function scrollPosChange() {
-
-    if (scrollPos.current > 3) {
-      makeNavBlack();
-    } else {
-      makeNavWhite();
-    }
-    
-    $(`#img${scrollPos.current-1}0`).stop();
-    $(`#img${scrollPos.current-1}1`).stop();
-    $(`#img${scrollPos.current-1}0`).css('top', ($(`#img${scrollPos.current-1}0`).height()/-2) + (sh/2) + 100)
-    $(`#img${scrollPos.current-1}1`).css('top', ($(`#img${scrollPos.current-1}1`).height()/-2) + (sh/2) + 100)
-    
-    scroll()
-  }
-
   useEffect(() => {
     $(`#img${scrollPos.current-1}0`).stop();
     $(`#img${scrollPos.current-1}1`).stop();
     scrollPos.current = 0;
-    scrollPosChange();
+    vertScroll();
     deltaY = 0;
     atTop.current = true;
-    // setAtTop(true)
   }, [forceToTop])
   
   return (
     <div className='page' id='home'>
       <div className="section" style={{overflowY: 'hidden'}}>
-      {/* <video autoplay loop muted playsinline className="homeVid">
-        <source src={vid} type="video/mp4" />
-      </video> */}
         <video id='vid' className='homeVid' type="video/mp4" src={vid} controls={false} autoPlay loop muted playsInline></video>
       </div>
       <div className="section" id='collections'>
