@@ -84,17 +84,17 @@ const collections = [
     color: 1
   }
 ]
+const scrollTime = 8000;
+const scrollAmnt = 50
 
 export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhite, logoOpac}) {
   var deltaY = 0;
   var deltaX = 0;
 
-  const vidRef = useRef();
   const atTop = useRef(true);
   const scrollPos = useRef(0);
   const slidePos = useRef(0);
-  const scrollTime = 12000;
-  const scrollAmnt = 50
+  var loops = [];
 
   const sh = window.innerHeight;
   const sw = window.innerWidth;
@@ -151,13 +151,24 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
     }
   ]
 
-  function loop(pos) {
-    if (pos < animationStages.length) {
-      animationStages[pos](() => {
-        loop(pos+1);
-      });
-    } else {
-      loop(0);
+  class Loop {
+    constructor(startingPosition) {
+      this.pos = startingPosition;
+      this.kill = false;
+      this.loop();
+    }
+
+    loop() {
+      if (this.kill) return;
+      if (this.pos < animationStages.length) {
+        animationStages[this.pos](() => {
+          this.pos = this.pos + 1
+          this.loop();
+        });
+      } else {
+        this.pos = 0
+        this.loop();
+      }
     }
   }
 
@@ -218,23 +229,30 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
 
     if (scrollPos.current !== 0) {
       setTimeout(() => {
-        loop(0)
+        loops.push(new Loop(0))
       }, 500)
     }
   }
 
   function horzScroll() {
+    loops = loops.filter(l => !l.kill)
+    kill();
+    loops.forEach(loop => {
+      loop.kill = true;
+    })
     if (+$(`#img${scrollPos.current-1}1`).css('opacity') === 0) {
-      kill();
-      loop(1);
+      loops.push(new Loop(1))
     } else if (+$(`#img${scrollPos.current-1}1`).css('opacity') === 1) {
-      kill();
-      loop(5);
+      loops.push(new Loop(5))
     }
   }
+
+  function vidLoaded() {
+    $('#vid').animate({opacity: 1}, 500)
+  }
+
   useEffect(() => {
     initPics();
-    $('#vid').animate({opacity: 1}, 500)
 
     $('#home')[0].addEventListener('wheel', e => {
       e.preventDefault();
@@ -274,8 +292,7 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
       <div className="section">
       {/* <div className="section" style={{overflowY: 'hidden'}}> */}
         <div className="vidCont">
-          {/* <video id='vid' ref={vidRef} className='homeVid' type="video/mp4" src={vid} style={{opacity: '0'}} controls={false} onLoad={vidLoaded} autoPlay loop muted playsInline></video> */}
-          <video id='vid' className='homeVid' type="video/mp4" src={vid} style={{opacity: '0'}} controls={false} autoPlay loop muted playsInline></video>
+          <video id='vid' className='homeVid' type="video/mp4" src={vid} style={{opacity: '0'}} controls={false} onPlay={vidLoaded} autoPlay loop muted playsInline></video>
           <Logo opac={logoOpac} type={'home'} />
         </div>
       </div>

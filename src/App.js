@@ -105,10 +105,6 @@ function App() {
       })
   }
 
-  useEffect(() => {
-    console.log(logoOpac)
-  }, [logoOpac])
-
   function tryLogin(e) {
     e.preventDefault();
     setWaitingLogin(true)
