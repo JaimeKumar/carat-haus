@@ -5,7 +5,7 @@ import Homepage from './Homepage';
 import About from './About';
 import Logo from './Logo';
 import axios from 'axios';
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { MdOutlineExitToApp } from 'react-icons/md'
 import { RiMenuFill } from 'react-icons/ri'
 import $ from 'jquery';
@@ -76,10 +76,6 @@ function App() {
     setAbout(true);
   }
 
-  function scrolled() {
-    setLogo(p => Math.abs(p-1))
-  }
-
   function closeApts() {
     linkHome()
   }
@@ -108,6 +104,10 @@ function App() {
         }
       })
   }
+
+  useEffect(() => {
+    console.log(logoOpac)
+  }, [logoOpac])
 
   function tryLogin(e) {
     e.preventDefault();
@@ -153,7 +153,7 @@ function App() {
         </ul>
       </div>
       <div className="navbar" id='nav'>
-          <Logo logoClick={linkHome} opac={logoOpac} type={'nav'} triggerFade={logoTriggerFade}/>
+          <Logo onClick={linkHome} opac={logoOpac} type={'nav'} triggerFade={logoTriggerFade}/>
           <ul>
             <li onClick={linkHome}>Home</li>
             <li onClick={linkAbout}>About Us</li>
@@ -163,8 +163,13 @@ function App() {
           <div className="menuButton" onClick={toggleMenu}><RiMenuFill /></div>
       </div>
 
-      <Homepage scrolled={scrolled} forceToTop={triggerScroll} makeNavBlack={blackNav} makeNavWhite={whiteNav}/>
-      <Logo logoClick={()=>{}} opac={1 - logoOpac} type={'home'} triggerFade={logoTriggerFade}/>
+      <Homepage 
+        scrolled={(n) => {setLogo(n)}}
+        forceToTop={triggerScroll}
+        makeNavBlack={blackNav}
+        makeNavWhite={whiteNav}
+        opac={1 - logoOpac}
+      />
 
       {bookings ?
         <div className="page" style={{justifyContent: 'center'}}>

@@ -1,7 +1,7 @@
 import React from 'react'
 import diamond from './content/logoW.svg'
 
-export default function Logo({logoClick, opac, type}) {
+export default function Logo({opac, type}) {
     let style = {};
     let pSize, hSize, pSpace;
     switch (type) {
@@ -28,7 +28,7 @@ export default function Logo({logoClick, opac, type}) {
   return (
     <>
         {(type==='home') ? <div className="homeBlur" style={{opacity: opac}}></div> : <></> }
-        <div className="logo" onClick={logoClick} style={style}>
+        <div className="logo" style={style}>
             <img id='logoImg' src={diamond} alt="" />
             <div className="logoText">
                 <h3 style={{fontSize: hSize}}>Carat Haus</h3>
