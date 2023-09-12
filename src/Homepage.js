@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import $ from 'jquery';
 import Logo from './Logo';
-import vid from './content/carat-haus-vid.mp4'
+import vid from './content/carat-haus-vid-small.mp4'
 
 const wb = ['white', 'black']
 const collections = [
