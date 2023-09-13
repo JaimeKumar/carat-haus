@@ -22,7 +22,7 @@ const collections = [
       require('./collections/rings/carat27.jpeg'),
       require('./collections/rings/carat31.jpeg')
     ],
-    color: 0
+    color: [0, 0, 0, 0, 0, 0]
   },
   {
     title: 'Rose collection',
@@ -35,7 +35,7 @@ const collections = [
       require('./collections/tan collec/ctc6.jpeg'),
       require('./collections/tan collec/ctc5.jpeg')
     ],
-    color: 0
+    color: [1, 0, 1, 1, 0, 0]
   },
   {
     title: 'Cuban collection',
@@ -49,7 +49,7 @@ const collections = [
       require('./collections/cubans/cc5.jpeg'),
       require('./collections/cubans/cc2.jpeg')
     ],
-    color: 0
+    color: [0, 1, 1, 0, 0, 0, 0]
   },
   {
     title: 'Fine Jewellery',
@@ -61,7 +61,7 @@ const collections = [
       require('./collections/fine jewellery/cfj4.jpeg'),
       require('./collections/fine jewellery/cfj5.jpeg')
     ],    
-    color: 1
+    color: [1, 1, 1, 1, 1]
   },
   {
     title: 'Natural Diamonds',
@@ -71,7 +71,7 @@ const collections = [
       require('./collections/diamonds/cd2.jpeg'),
       require('./collections/diamonds/cd3.jpeg')
     ],    
-    color: 1
+    color: [1, 0, 1]
   },
   {
     title: 'Lab-Grown Diamonds',
@@ -81,7 +81,7 @@ const collections = [
       require('./collections/diamonds/cd5.jpeg'),
       require('./collections/diamonds/cd4.jpeg')
     ],    
-    color: 1
+    color: [0, 1, 1]
   }
 ]
 const scrollTime = 8000;
@@ -122,6 +122,7 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
 
     // 3 - Fade-in img1
     (callback) => {
+      $(`#text${scrollPos.current-1}`).css('color', wb[collections[scrollPos.current-1].color[slidePos.current]])
       $(`#img${scrollPos.current-1}1`).animate({opacity: 1}, 750, 'linear', callback)
     },
 
@@ -147,6 +148,7 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
 
     // 7 - Fade-out img1
     (callback) => {
+      $(`#text${scrollPos.current-1}`).css('color', wb[collections[scrollPos.current-1].color[slidePos.current]])
       $(`#img${scrollPos.current-1}1`).animate({opacity: 0}, 750, 'linear', callback)
     }
   ]
@@ -290,7 +292,6 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
   return (
     <div className='page' id='home'>
       <div className="section">
-      {/* <div className="section" style={{overflowY: 'hidden'}}> */}
         <div className="vidCont">
           <video id='vid' className='homeVid' type="video/mp4" src={vid} style={{opacity: '0'}} controls={false} onPlay={vidLoaded} autoPlay loop muted playsInline></video>
           <Logo opac={logoOpac} type={'home'} />
@@ -302,7 +303,7 @@ export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhi
             <div className="collection">
               <img className='cImg' src={c.imgs[0]} alt="" id={`img${i}0`} />
               <img className='cImg hide' src={c.imgs[1]} alt="" id={`img${i}1`} />
-              <div className="textSection" style={{color: wb[c.color]}}>
+              <div className="textSection" id={`text${i}`} style={{color: wb[c.color[0]]}}>
                 <h1>{c.title}</h1>
                 {c.text.map(t => {
                   return <p>

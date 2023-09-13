@@ -174,7 +174,7 @@ li:hover::after {
   bottom: 0;
   z-index: 1;
   width: clamp(0px, calc(100% - 20px), 700px);
-
+  transition: color 0.5s;
 }
 
 .textSection:hover + .backdrop {
