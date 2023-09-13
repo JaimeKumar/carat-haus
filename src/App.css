@@ -84,17 +84,29 @@ li:hover::after {
 }
 
 .page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  width: 100vw;
+  /* height: 100vh; */
+  /* height: 100svh; */
+  /* position: absolute; */
+  /* top: 0; */
+  /* bottom: 0; */
+  /* overflow: hidden; */
+  /* scroll-behavior: smooth; */
+  overflow-y: auto;
+}
+
+.overPage {
   width: 100vw;
   height: 100vh;
   height: 100svh;
   position: absolute;
-  bottom: 0;
-  overflow: hidden;
-  scroll-behavior: smooth;
-  /* overflow-y: auto; */
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #abouts {
@@ -136,6 +148,8 @@ li:hover::after {
   flex-direction: column;
   min-height: 100vh;
   min-height: 100svh;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .section::-webkit-scrollbar {
@@ -156,8 +170,10 @@ li:hover::after {
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 0.7s;
-  backdrop-filter: blur(10px);
+  transition: 0.7s;
+  pointer-events: none;
+
+  /* backdrop-filter: blur(3px); */
 }
 
 .darkBackdrop {
@@ -172,6 +188,7 @@ li:hover::after {
 .textSection {
   position: absolute;
   bottom: 0;
+  left: 0;
   z-index: 1;
   width: clamp(0px, calc(100% - 20px), 700px);
   transition: color 0.5s;
@@ -187,26 +204,18 @@ li:hover::after {
   mix-blend-mode: difference;
 }
 
-.section h1 {
+.textSection h1 {
   text-transform: uppercase;
   font-size: clamp(1.3rem, 4vw, 3rem);
   padding-left: 18px;
 }
 
-.section p {
+.textSection p {
   font-family: 'Montserrat';
   padding-left: 20px;
   font-size: clamp(0.7rem, 2vw, 1.1rem);
   width: clamp(0px, calc(100% - 20px), 700px);
   text-align: justify;
-}
-
-.cImg {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: auto;
 }
 
 .hide {
@@ -253,6 +262,57 @@ li:hover::after {
   position: relative;
 }
 
+.collectionCont {
+  height: 100vh;
+  height: 100svh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.arrows {
+  position: absolute;
+  top: calc(50% - 50px);
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: clamp(10px, 3vw, 20px);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.cImgCont {
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  transition: transform 0.5s;
+}
+
+.cImgCont::-webkit-scrollbar {
+  display: none;
+}
+
+.cImg {
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.cImg img {
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  object-fit: cover;
+  /* animation: slowbounce 20s linear infinite; */
+}
+
 .imgCont img {
   position: absolute;
   width: 100%;
@@ -270,6 +330,13 @@ li:hover::after {
   z-index: 3;
   color: white;
   transition: color 0.6s;
+}
+
+.logoCenter {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
 }
 
 .logo {
@@ -400,11 +467,14 @@ li:hover::after {
 }
 
 
-
 .centerCont {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .timepicker {
@@ -642,6 +712,10 @@ td {
   height: 100vh;
   height: 100svh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .loginBox {
@@ -715,6 +789,17 @@ td {
       transform: translateY(-5px);
       /* opacity: 0; */
   }
+}
+
+@keyframes slowbounce {
+  0%, 100% {
+    top: 50%
+    /* transform: translateY(0); */
+}
+50% {
+  top: 45%;
+    /* transform: translateY(-50px); */
+}
 }
 
 /* CALENDER */

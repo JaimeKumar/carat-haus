@@ -42,20 +42,9 @@ function App() {
         console.log(err)
       })
   }
-
-  function whiteNav() {
-    $('#nav').css('color', 'white')
-    setLogoTrigger(!logoTriggerFade)
-    $('#logoImg').removeClass('blackImg')
-  }
-
-  function blackNav() {
-    $('#nav').css('color', 'black')
-    $('#logoImg').addClass('blackImg')
-  }
   
   function linkHome() {
-    whiteNav();
+    console.log('yh')
     setLogin(false);
     setAbout(false)
     setBookings(null);
@@ -82,6 +71,20 @@ function App() {
   
   function closeBookings() {
     linkHome()
+  }
+
+  function doSetLogo(x) {
+    setLogo(x)
+  }
+
+  function setNavColour(i) {
+    if (i < 1) {
+      $('#nav').css('color', 'white')
+      $('#logoImg').removeClass('blackImg')
+    } else if (i > 0) {
+      $('#nav').css('color', 'black')
+      $('#logoImg').addClass('blackImg')
+    }
   }
 
   function getBooking() {
@@ -149,7 +152,7 @@ function App() {
         </ul>
       </div>
       <div className="navbar" id='nav'>
-          <Logo onClick={linkHome} opac={logoOpac} type={'nav'} triggerFade={logoTriggerFade}/>
+          <Logo clicked={linkHome} opac={logoOpac} type={'nav'} />
           <ul>
             <li onClick={linkHome}>Home</li>
             <li onClick={linkAbout}>About Us</li>
@@ -160,15 +163,13 @@ function App() {
       </div>
 
       <Homepage 
-        scrolled={(n) => {setLogo(n)}}
         forceToTop={triggerScroll}
-        makeNavBlack={blackNav}
-        makeNavWhite={whiteNav}
-        opac={1 - logoOpac}
+        doSetLogo={doSetLogo}
+        setNavColour={setNavColour}
       />
 
       {bookings ?
-        <div className="page" style={{justifyContent: 'center'}}>
+        <div className="overPage" style={{justifyContent: 'center'}}>
           <ViewBookings bookings={bookings} del={deleteAppt} close={closeApts} refreshing={bookingsRefreshing} />
         </div> :
         makeApt?
@@ -176,11 +177,11 @@ function App() {
             <Booking key='bookingKey' close={closeBookings} />
           </div>:
         about?
-          <div className="page">
+          <div className="overPage">
             <About close={() => {setAbout(false); linkHome()}} />
           </div>:
         login?
-          <div className="page" style={{justifyContent: 'center'}}>
+          <div className="overPage" style={{justifyContent: 'center'}}>
             <div className="darkBackdrop" onClick={(e) => {if (e.target === e.currentTarget) {linkHome()}}}></div>
             <form className="loginBox" onSubmit={tryLogin}>
               <span>Username</span>

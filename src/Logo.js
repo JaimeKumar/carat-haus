@@ -1,15 +1,17 @@
 import React from 'react'
 import diamond from './content/logoW.svg'
 
-export default function Logo({opac, type}) {
+export default function Logo({opac, type, clicked}) {
     let style = {};
+    let cont = '';
     let pSize, hSize, pSpace;
     switch (type) {
         case 'home':
-            style.position = 'absolute';
-            style.left = '50%';
-            style.top = '50%';
-            style.transform = 'translate(-50%, -50%)';
+            cont = 'logoCenter';
+            // style.position = 'absolute';
+            // style.left = '50%';
+            // style.top = '50%';
+            // style.transform = 'translate(-50%, -50%)';
             style.height = 'clamp(35px, 10vw, 70px)';
             style.color = 'white';
             style.cursor = 'default';
@@ -26,15 +28,15 @@ export default function Logo({opac, type}) {
         }
     style.opacity = opac;
   return (
-    <>
+    <div className={cont}>
         {(type==='home') ? <div className="homeBlur" style={{opacity: opac}}></div> : <></> }
-        <div className="logo" style={style}>
+        <div className="logo" onClick={clicked} style={style}>
             <img id='logoImg' src={diamond} alt="" />
             <div className="logoText">
                 <h3 style={{fontSize: hSize}}>Carat Haus</h3>
                 <span style={{fontSize: pSize, letterSpacing: pSpace}}>LONDON</span>
             </div>
         </div>
-    </>
+    </div>
   )
 }

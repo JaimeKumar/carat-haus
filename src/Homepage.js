@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import $ from 'jquery';
 import Logo from './Logo';
 import vid from './content/carat-haus-vid-small.mp4'
+import Collection from './Collection';
 
-const wb = ['white', 'black']
 const collections = [
   {
     title: 'Engagement Rings',
@@ -84,239 +84,91 @@ const collections = [
     color: [0, 1, 1]
   }
 ]
-const scrollTime = 8000;
-const scrollAmnt = 50
 
-export default function Homepage({scrolled, forceToTop, makeNavBlack, makeNavWhite, logoOpac}) {
-  var deltaY = 0;
-  var deltaX = 0;
-
-  const atTop = useRef(true);
-  const scrollPos = useRef(0);
-  const slidePos = useRef(0);
-  var loops = [];
-
+export default function Homepage({ forceToTop, doSetLogo, setNavColour }) {  
+  const touchStart = useRef(null);
+  const [scrollPos, setScroll] = useState(0)
   const sh = window.innerHeight;
-  const sw = window.innerWidth;
-
-  const animationStages = [
-    // 0 - Scroll img0
-    (callback) => {
-      $(`#img${scrollPos.current-1}0`).animate({top: ($(`#img${scrollPos.current-1}0`).height()/-2) + (sh/2) - scrollAmnt}, scrollTime, 'linear', callback)
-    },
-    
-    // 1 - Increment slidePos
-    (callback) => {
-      slidePos.current = slidePos.current + 1;
-      if (slidePos.current > collections[scrollPos.current-1].imgs.length-1) {
-        slidePos.current = 0;
-      }
-      callback();
-    },
-
-    // 2 - Re-init img1
-    (callback) => {
-      $(`#img${scrollPos.current-1}1`).attr('src', collections[scrollPos.current-1].imgs[slidePos.current])
-      $(`#img${scrollPos.current-1}1`).animate({top: ($(`#img${scrollPos.current-1}0`).height()/-2) + (sh/2) + scrollAmnt}, 100, 'linear', callback)
-    },
-
-    // 3 - Fade-in img1
-    (callback) => {
-      $(`#text${scrollPos.current-1}`).css('color', wb[collections[scrollPos.current-1].color[slidePos.current]])
-      $(`#img${scrollPos.current-1}1`).animate({opacity: 1}, 750, 'linear', callback)
-    },
-
-    // 4 - Scroll img1
-    (callback) => {
-      $(`#img${scrollPos.current-1}1`).animate({top: ($(`#img${scrollPos.current-1}1`).height()/-2) + (sh/2) - scrollAmnt}, scrollTime, 'linear', callback)
-    },
-
-    // 5 - Increment slidePos
-    (callback) => {
-      slidePos.current = slidePos.current + 1;
-      if (slidePos.current > collections[scrollPos.current-1].imgs.length-1) {
-        slidePos.current = 0;
-      }
-      callback();
-    },
-
-    // 6 - Re-inint img0
-    (callback) => {
-      $(`#img${scrollPos.current-1}0`).attr('src', collections[scrollPos.current-1].imgs[slidePos.current])
-      $(`#img${scrollPos.current-1}0`).animate({top: ($(`#img${scrollPos.current-1}0`).height()/-2) + (sh/2) + scrollAmnt}, 100, 'linear', callback)
-    },
-
-    // 7 - Fade-out img1
-    (callback) => {
-      $(`#text${scrollPos.current-1}`).css('color', wb[collections[scrollPos.current-1].color[slidePos.current]])
-      $(`#img${scrollPos.current-1}1`).animate({opacity: 0}, 750, 'linear', callback)
-    }
-  ]
-
-  class Loop {
-    constructor(startingPosition) {
-      this.pos = startingPosition;
-      this.kill = false;
-      this.loop();
-    }
-
-    loop() {
-      if (this.kill) return;
-      if (this.pos < animationStages.length) {
-        animationStages[this.pos](() => {
-          this.pos = this.pos + 1
-          this.loop();
-        });
-      } else {
-        this.pos = 0
-        this.loop();
-      }
-    }
-  }
-
-  function initPics() {
-    $(`#img${scrollPos.current-1}0`).css('top', ($(`#img${scrollPos.current-1}0`).height()/-2) + (sh/2) + 100)
-    $(`#img${scrollPos.current-1}1`).css('top', ($(`#img${scrollPos.current-1}1`).height()/-2) + (sh/2) + 100)
-  };
-
-  function kill() {
-    $(`#img${scrollPos.current-1}0`).stop(true, false);
-    $(`#img${scrollPos.current-1}1`).stop(true, false);
-  }
-
-  function updateScrollPos() {
-    let dir = deltaY / Math.abs(deltaY);
-    slidePos.current = 0;
-    
-    kill();
-
-    let newScrollPos = scrollPos.current + dir;
-    
-    if (newScrollPos < 0) {
-      newScrollPos = 0;
-    } else if (newScrollPos > 6) {
-      newScrollPos = 6;
-    }
-    
-    if (!isNaN(newScrollPos)) {
-      scrollPos.current = newScrollPos;
-    }
-
-    if (scrollPos.current > 3) {
-      makeNavBlack();
-    } else {
-      makeNavWhite();
-    }
-    
-    scroll();
-  }
-
-  function scroll() {
-    initPics();
-
-    // $('#home').scrollTop(scrollPos.current * window.innerHeight)
-    $('#home')[0].scrollTo({
-      left: 0,
-      top: scrollPos.current * window.innerHeight,
-      behavior: 'smooth'
-    })
-    
-    if (atTop.current && scrollPos.current !== 0) {
-      scrolled(1)
-      atTop.current = false;
-    } else if (!atTop.current && scrollPos.current === 0) {
-      scrolled(0);
-      atTop.current = true;
-    }
-
-    if (scrollPos.current !== 0) {
-      setTimeout(() => {
-        loops.push(new Loop(0))
-      }, 500)
-    }
-  }
-
-  function horzScroll() {
-    loops = loops.filter(l => !l.kill)
-    kill();
-    loops.forEach(loop => {
-      loop.kill = true;
-    })
-    if (+$(`#img${scrollPos.current-1}1`).css('opacity') === 0) {
-      loops.push(new Loop(1))
-    } else if (+$(`#img${scrollPos.current-1}1`).css('opacity') === 1) {
-      loops.push(new Loop(5))
-    }
-  }
 
   function vidLoaded() {
-    $('#vid').animate({opacity: 1}, 500)
+    $('#vid').css({opacity: 1})
+  }
+
+  function roundScroll(dir) {
+    if (dir > 0) {
+      if ((($('#collections').scrollTop()/sh) % 1) > 0.1) {
+        $('#collections')[0].scrollTo({
+          left: 0,
+          top: Math.round(($('#collections').scrollTop()/sh) + 0.4) * sh,
+          behavior: 'smooth'
+        })
+        setScroll(Math.round(($('#collections').scrollTop()/sh) + 0.4))
+      }
+    } else if (dir < 0) {
+      if ((($('#collections').scrollTop()/sh) % 1) < 0.9) {
+        $('#collections')[0].scrollTo({
+          left: 0,
+          top: Math.round(($('#collections').scrollTop()/sh) - 0.4) * sh,
+          behavior: 'smooth'
+        })
+        setScroll(Math.round(($('#collections').scrollTop()/sh) - 0.4))
+      }
+    }
+  }
+
+  function updatePos(c, slide) {
+    setNavColour(collections[c].color[slide]);
   }
 
   useEffect(() => {
-    initPics();
+    $('#collections')[0].addEventListener('wheel', e => {
+      let dir = e.deltaY / Math.abs(e.deltaY);
+      roundScroll(dir)
+    })
 
-    $('#home')[0].addEventListener('wheel', e => {
-      e.preventDefault();
-      deltaY += e.deltaY;
-      deltaX += e.deltaX;
-      let fractionY = deltaY / sh;
-      let fractionX = deltaX / sw;
-      if (Math.abs(fractionY) > 0.6) {
-        updateScrollPos()
-        deltaY = 0;
-      } else if (Math.abs(fractionX) > 0.5) {
-        horzScroll();
-        deltaX = 0;
+    $('#collections')[0].addEventListener('touchstart', e => {
+      touchStart.current = {y: e.changedTouches[0].clientY, x: e.changedTouches[0].clientX};
+    })
+
+    $('#collections')[0].addEventListener('touchend', e => {
+      if (!touchStart.current) return;
+      let dir = {
+        y: (touchStart.current.y > e.changedTouches[0].clientY) ? 1: -1,
+        x: (touchStart.current.x > e.changedTouches[0].clientX) ? 1: -1,
       }
-    })
-
-    $('#home')[0].addEventListener('touchend', e => {
-      scrollPos.current = Math.round($('#home').scrollTop() / window.innerHeight);
-      scroll();
-    })
-
-    $('#home')[0].addEventListener('click', e => {
-      horzScroll();
+      roundScroll(dir.y)
     })
   }, [])
 
   useEffect(() => {
-    kill();
-    scrollPos.current = 0;
-    updateScrollPos();
-    deltaY = 0;
-    atTop.current = true;
+    if (scrollPos===0) {
+      doSetLogo(0);
+      if ($('#collections').scrollTop() !== 0) {
+        $('#collections')[0].scrollTo({
+          left: 0,
+          top: 0,
+          behavior: 'smooth'
+        })
+      }
+    } else {
+      doSetLogo(1)
+      updatePos(scrollPos-1, 0)
+    }
+  }, [scrollPos])
+
+  useEffect(() => {
+    setScroll(0);
   }, [forceToTop])
   
   return (
-    <div className='page' id='home'>
-      <div className="section">
-        <div className="vidCont">
-          <video id='vid' className='homeVid' type="video/mp4" src={vid} style={{opacity: '0'}} controls={false} onPlay={vidLoaded} autoPlay loop muted playsInline></video>
-          <Logo opac={logoOpac} type={'home'} />
-        </div>
+    <div className='page' id='collections'>
+      <div className="vidCont">
+        <video id='vid' className='homeVid' type="video/mp4" src={vid} style={{opacity: '0', transition: '0.3s'}} controls={false} onPlay={vidLoaded} autoPlay loop muted playsInline></video>
+        <Logo opac={1} type={'home'} clicked={()=>{}} />
       </div>
-      <div className="section" id='collections'>
-        {collections.map((c, i) => {
-          return (
-            <div className="collection">
-              <img className='cImg' src={c.imgs[0]} alt="" id={`img${i}0`} />
-              <img className='cImg hide' src={c.imgs[1]} alt="" id={`img${i}1`} />
-              <div className="textSection" id={`text${i}`} style={{color: wb[c.color[0]]}}>
-                <h1>{c.title}</h1>
-                {c.text.map(t => {
-                  return <p>
-                    {t}<br /><br />
-                  </p>
-                })}
-
-              </div>
-              <div className="backdrop" style={{background: `linear-gradient(36deg, ${wb[Math.abs(c.color-1)]} 0%, transparent 80%)`}}></div>
-            </div>
-          )
-        })}
-      </div>
+      {collections.map((c, i) => {
+        return <Collection collection={c} scrollPos={scrollPos} index={i} slideChange={updatePos} />
+      })}
     </div>
   )
 }
