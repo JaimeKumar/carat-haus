@@ -310,7 +310,11 @@ li:hover::after {
   top: 50%;
   transform: translateY(-50%);
   object-fit: cover;
-  /* animation: slowbounce 20s linear infinite; */
+  /* animation: none; */
+}
+
+.animatedImg {
+  animation: slowbounce 18s linear infinite;
 }
 
 .imgCont img {

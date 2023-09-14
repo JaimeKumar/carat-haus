@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaChevronLeft } from 'react-icons/fa'
 import { FaChevronRight } from 'react-icons/fa'
-import * as $ from 'jquery'
+import $ from 'jquery'
 const sw = window.innerWidth;
 
 export default function CollectionImage({collection, scrollPos, index, slideChange}) {
@@ -15,9 +15,10 @@ export default function CollectionImage({collection, scrollPos, index, slideChan
         }
         return;
       };
+      $(`#cImg${index}${slidePos}`).addClass('animatedImg')
       const id = setInterval(() => {
         setSlide(p => (p + 1) % (collection.imgs.length-1));
-      }, 10000);
+      }, 9000);
   
       setIntervalId(id);
   
@@ -29,7 +30,7 @@ export default function CollectionImage({collection, scrollPos, index, slideChan
     }, [scrollPos]);
 
     function changeSlide(dir) {
-      $(`#cImg${index}${slidePos}`).css('animation', 'none')
+      $(`#cImg${index}${slidePos}`).removeClass('animatedImg')
 
       if (intervalId) {
         clearInterval(intervalId);
@@ -46,8 +47,8 @@ export default function CollectionImage({collection, scrollPos, index, slideChan
 
     useEffect(() => {
       slideChange(index, slidePos)
-      console.log(index, slidePos)
-      $(`#cImg${index}${slidePos}`).css('animation', 'slowbounce 20s linear infinite')
+      if (scrollPos-1 !== index) return;
+      $(`#cImg${index}${slidePos}`).addClass('animatedImg')
     }, [slidePos])
     
   return (
@@ -56,7 +57,7 @@ export default function CollectionImage({collection, scrollPos, index, slideChan
           {collection.imgs.map((img, i) => {
               return (
                 <div className="cImg">
-                  <img loading='lazy' id={`cImg${index}${i}`} src={img} alt="" />
+                  <img id={`cImg${index}${i}`} src={img} alt="" />
                 </div>
               )
           })}
