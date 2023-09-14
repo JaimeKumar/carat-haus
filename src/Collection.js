@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaChevronLeft } from 'react-icons/fa'
 import { FaChevronRight } from 'react-icons/fa'
+import * as $ from 'jquery'
 const sw = window.innerWidth;
 
 export default function CollectionImage({collection, scrollPos, index, slideChange}) {
@@ -28,6 +29,8 @@ export default function CollectionImage({collection, scrollPos, index, slideChan
     }, [scrollPos]);
 
     function changeSlide(dir) {
+      $(`#cImg${index}${slidePos}`).css('animation', 'none')
+
       if (intervalId) {
         clearInterval(intervalId);
       }
@@ -43,15 +46,17 @@ export default function CollectionImage({collection, scrollPos, index, slideChan
 
     useEffect(() => {
       slideChange(index, slidePos)
+      console.log(index, slidePos)
+      $(`#cImg${index}${slidePos}`).css('animation', 'slowbounce 20s linear infinite')
     }, [slidePos])
     
   return (
     <div className="collectionCont">
       <div className='cImgCont' style={{transform: `translateX(-${slidePos * sw}px)`}}>
-          {collection.imgs.map(img => {
+          {collection.imgs.map((img, i) => {
               return (
                 <div className="cImg">
-                  <img loading='lazy' src={img} alt="" />
+                  <img loading='lazy' id={`cImg${index}${i}`} src={img} alt="" />
                 </div>
               )
           })}

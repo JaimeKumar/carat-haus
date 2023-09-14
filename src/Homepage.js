@@ -22,6 +22,15 @@ const collections = [
       require('./collections/rings/carat27.jpeg'),
       require('./collections/rings/carat31.jpeg')
     ],
+    set: [
+      [
+        {src: require('./collections/rings/set25/carat25_numjzl_c_scale,w_480.jpg'), w: 480},
+        {src: require('./collections/rings/set25/carat25_numjzl_c_scale,w_780.jpg'), w: 780},
+        {src: require('./collections/rings/set25/carat25_numjzl_c_scale,w_1017.jpg'), w: 1017},
+        {src: require('./collections/rings/set25/carat25_numjzl_c_scale,w_1247.jpg'), w: 1247},
+        {src: require('./collections/rings/set25/carat25_numjzl_c_scale,w_1380.jpg'), w: 1380}
+      ]
+    ],
     color: [0, 0, 0, 0, 0, 0]
   },
   {
