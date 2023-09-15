@@ -852,6 +852,7 @@ td {
   border: 0;
   outline: none;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  color: #2f2f2f;
 }
 
 .react-calendar button:enabled:hover {
@@ -867,6 +868,7 @@ td {
 .react-calendar__navigation button {
   min-width: 44px;
   background: none;
+  color: #2f2f2f;
 }
 
 .react-calendar__navigation button:disabled {
