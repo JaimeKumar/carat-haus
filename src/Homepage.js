@@ -138,6 +138,13 @@ const collections = [
     ],
     set: [
       [
+        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_1027.jpg'), w: 1027},
+        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_1456.jpg'), w: 1456},
+        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_1828.jpg'), w: 1828},
+        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
         {src: require('./collections/cubans/cc0/cc0_jcao5u_c_scale,w_600.jpg'), w: 600},
         {src: require('./collections/cubans/cc0/cc0_jcao5u_c_scale,w_1060.jpg'), w: 1060},
         {src: require('./collections/cubans/cc0/cc0_jcao5u_c_scale,w_1394.jpg'), w: 1394},
@@ -150,13 +157,6 @@ const collections = [
         {src: require('./collections/cubans/cc1/cc1_hkscu8_c_scale,w_1452.jpg'), w: 1452},
         {src: require('./collections/cubans/cc1/cc1_hkscu8_c_scale,w_1753.jpg'), w: 1753},
         {src: require('./collections/cubans/cc1/cc1_hkscu8_c_scale,w_1920.jpg'), w: 1920},
-      ],
-      [
-        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_600.jpg'), w: 600},
-        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_1067.jpg'), w: 1067},
-        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_1392.jpg'), w: 1392},
-        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_1794.jpg'), w: 1794},
-        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_1920.jpg'), w: 1920},
       ],
       [
         {src: require('./collections/cubans/cc4/cc4_ljnpla_c_scale,w_600.jpg'), w: 600},
@@ -173,11 +173,11 @@ const collections = [
         {src: require('./collections/cubans/cc5/cc5_iripa9_c_scale,w_1920.jpg'), w: 1920},
       ],
       [
-        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_600.jpg'), w: 600},
-        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_1027.jpg'), w: 1027},
-        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_1456.jpg'), w: 1456},
-        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_1828.jpg'), w: 1828},
-        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_1920.jpg'), w: 1920},
+        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_1067.jpg'), w: 1067},
+        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_1392.jpg'), w: 1392},
+        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_1794.jpg'), w: 1794},
+        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_1920.jpg'), w: 1920},
       ],
     ],
     color: [0, 1, 1, 0, 0, 0, 0]
