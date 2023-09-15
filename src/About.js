@@ -1,7 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import $ from 'jquery';
 
 export default function About({ close }) {
+
+    const skip = useRef(false)
+    const closed = useRef(false)
+    const pos = useRef(0)
 
     useEffect(() => {
         $(`#abouts`).animate({opacity: 1}, 500, 'linear', () => {
@@ -10,6 +14,9 @@ export default function About({ close }) {
     }, [])
 
     function animateClose() {
+        closed.current = true;
+        pos.current = 0;
+        skip.current = false;
         $(`#abouts`).animate({opacity: 0}, 500, 'linear', () => {
             close();
         })
@@ -23,21 +30,32 @@ export default function About({ close }) {
     ]
 
     function animate(n) {
-        $(`#about${n}`).animate({opacity: 1}, 2500, 'linear', () => {
+        if (n > 3) {animateClose(); return}
+        $(`#about${n}`).animate({opacity: 1}, 1000, 'linear', () => {
             setTimeout(() => {
-                $(`#about${n}`).animate({opacity: 0}, 2500, 'linear', () => {
-                    if (n > 2) {
-                        animateClose()
-                        return;
+                if (closed.current) return;
+                $(`#about${n}`).animate({opacity: 0}, 1000, 'linear', () => {
+                    if (!skip.current) {
+                        pos.current = n + 1;
+                        animate(n+1)
+                    } else {
+                        skip.current = false;
                     }
-                    animate(n+1)
                 })
-            }, 15000)
+            }, 10000)
         })
-    }   
+    }
+
+    function nextSlide() {
+        skip.current = true;
+        $(`#about${pos.current}`).animate({opacity: 0}, 1000, 'linear', () => {
+            pos.current = pos.current + 1;
+            animate(pos.current)
+        })
+    }
 
   return (
-    <div id='abouts' onClick={animateClose}>
+    <div id='abouts' onClick={nextSlide}>
         <div className="aboutTexts">
             {abouts.map((t, i) => {
                 let tstyle = (i%2)===0?{

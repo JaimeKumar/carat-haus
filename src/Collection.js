@@ -55,9 +55,12 @@ export default function CollectionImage({collection, scrollPos, index, slideChan
     <div className="collectionCont">
       <div className='cImgCont' style={{transform: `translateX(-${slidePos * sw}px)`}}>
           {collection.imgs.map((img, i) => {
+            console.log(collection.set[i])
+            console.log(collection.set[i].map(({ src, w }) => `${src} ${w}w`).join(', '))
+              const srcSetString = collection.set[i].map(({ src, w }) => `${src} ${w}w`).join(', ');
               return (
                 <div className="cImg">
-                  <img id={`cImg${index}${i}`} src={img} alt="" />
+                  <img id={`cImg${index}${i}`} src={img} srcSet={srcSetString} alt="" />
                 </div>
               )
           })}

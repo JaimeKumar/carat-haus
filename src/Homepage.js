@@ -24,12 +24,47 @@ const collections = [
     ],
     set: [
       [
+        {src: require('./collections/rings/set29/carat29_lqfflh_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/rings/set29/carat29_lqfflh_c_scale,w_1041.jpg'), w: 1041},
+        {src: require('./collections/rings/set29/carat29_lqfflh_c_scale,w_1376.jpg'), w: 1376},
+        {src: require('./collections/rings/set29/carat29_lqfflh_c_scale,w_1741.jpg'), w: 1741},
+        {src: require('./collections/rings/set29/carat29_lqfflh_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/rings/set32/carat32_mcdtwi_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/rings/set32/carat32_mcdtwi_c_scale,w_990.jpg'), w: 990},
+        {src: require('./collections/rings/set32/carat32_mcdtwi_c_scale,w_1376.jpg'), w: 1376},
+        {src: require('./collections/rings/set32/carat32_mcdtwi_c_scale,w_1654.jpg'), w: 1654},
+        {src: require('./collections/rings/set32/carat32_mcdtwi_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
         {src: require('./collections/rings/set25/carat25_numjzl_c_scale,w_480.jpg'), w: 480},
         {src: require('./collections/rings/set25/carat25_numjzl_c_scale,w_780.jpg'), w: 780},
         {src: require('./collections/rings/set25/carat25_numjzl_c_scale,w_1017.jpg'), w: 1017},
         {src: require('./collections/rings/set25/carat25_numjzl_c_scale,w_1247.jpg'), w: 1247},
         {src: require('./collections/rings/set25/carat25_numjzl_c_scale,w_1380.jpg'), w: 1380}
-      ]
+      ],
+      [
+        {src: require('./collections/rings/set26/carat26_gafeaq_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/rings/set26/carat26_gafeaq_c_scale,w_1043.jpg'), w: 1043},
+        {src: require('./collections/rings/set26/carat26_gafeaq_c_scale,w_1372.jpg'), w: 1372},
+        {src: require('./collections/rings/set26/carat26_gafeaq_c_scale,w_1679.jpg'), w: 1679},
+        {src: require('./collections/rings/set26/carat26_gafeaq_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/rings/set27/carat27_fsze8i_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/rings/set27/carat27_fsze8i_c_scale,w_1055.jpg'), w: 1055},
+        {src: require('./collections/rings/set27/carat27_fsze8i_c_scale,w_1368.jpg'), w: 1368},
+        {src: require('./collections/rings/set27/carat27_fsze8i_c_scale,w_1675.jpg'), w: 1675},
+        {src: require('./collections/rings/set27/carat27_fsze8i_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/rings/set31/carat31_eaqowb_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/rings/set31/carat31_eaqowb_c_scale,w_1008.jpg'), w: 1008},
+        {src: require('./collections/rings/set31/carat31_eaqowb_c_scale,w_1327.jpg'), w: 1327},
+        {src: require('./collections/rings/set31/carat31_eaqowb_c_scale,w_1730.jpg'), w: 1730},
+        {src: require('./collections/rings/set31/carat31_eaqowb_c_scale,w_1920.jpg'), w: 1920},
+      ],
     ],
     color: [0, 0, 0, 0, 0, 0]
   },
@@ -44,6 +79,50 @@ const collections = [
       require('./collections/tan collec/ctc6.jpeg'),
       require('./collections/tan collec/ctc5.jpeg')
     ],
+    set: [
+      [
+        {src: require('./collections/tan collec/ctc1/ctc1_mmwira_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/tan collec/ctc1/ctc1_mmwira_c_scale,w_1059.jpg'), w: 1059},
+        {src: require('./collections/tan collec/ctc1/ctc1_mmwira_c_scale,w_1387.jpg'), w: 1387},
+        {src: require('./collections/tan collec/ctc1/ctc1_mmwira_c_scale,w_1709.jpg'), w: 1709},
+        {src: require('./collections/tan collec/ctc1/ctc1_mmwira_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/tan collec/ctc2/ctc2_mf1pkd_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/tan collec/ctc2/ctc2_mf1pkd_c_scale,w_1097.jpg'), w: 1097},
+        {src: require('./collections/tan collec/ctc2/ctc2_mf1pkd_c_scale,w_1469.jpg'), w: 1469},
+        {src: require('./collections/tan collec/ctc2/ctc2_mf1pkd_c_scale,w_1762.jpg'), w: 1762},
+        {src: require('./collections/tan collec/ctc2/ctc2_mf1pkd_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/tan collec/ctc3/ctc3_ofxts8_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/tan collec/ctc3/ctc3_ofxts8_c_scale,w_1059.jpg'), w: 1059},
+        {src: require('./collections/tan collec/ctc3/ctc3_ofxts8_c_scale,w_1386.jpg'), w: 1386},
+        {src: require('./collections/tan collec/ctc3/ctc3_ofxts8_c_scale,w_1729.jpg'), w: 1729},
+        {src: require('./collections/tan collec/ctc3/ctc3_ofxts8_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/tan collec/ctc4/ctc4_wy1nau_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/tan collec/ctc4/ctc4_wy1nau_c_scale,w_1075.jpg'), w: 1075},
+        {src: require('./collections/tan collec/ctc4/ctc4_wy1nau_c_scale,w_1434.jpg'), w: 1434},
+        {src: require('./collections/tan collec/ctc4/ctc4_wy1nau_c_scale,w_1732.jpg'), w: 1732},
+        {src: require('./collections/tan collec/ctc4/ctc4_wy1nau_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/tan collec/ctc5/ctc5_wpjoyc_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/tan collec/ctc5/ctc5_wpjoyc_c_scale,w_1076.jpg'), w: 1076},
+        {src: require('./collections/tan collec/ctc5/ctc5_wpjoyc_c_scale,w_1384.jpg'), w: 1384},
+        {src: require('./collections/tan collec/ctc5/ctc5_wpjoyc_c_scale,w_1713.jpg'), w: 1713},
+        {src: require('./collections/tan collec/ctc5/ctc5_wpjoyc_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/tan collec/ctc6/ctc6_wrq6yi_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/tan collec/ctc6/ctc6_wrq6yi_c_scale,w_968.jpg'), w: 968},
+        {src: require('./collections/tan collec/ctc6/ctc6_wrq6yi_c_scale,w_1248.jpg'), w: 1248},
+        {src: require('./collections/tan collec/ctc6/ctc6_wrq6yi_c_scale,w_1502.jpg'), w: 1502},
+        {src: require('./collections/tan collec/ctc6/ctc6_wrq6yi_c_scale,w_1920.jpg'), w: 1920},
+      ],
+    ],
     color: [1, 0, 1, 1, 0, 0]
   },
   {
@@ -53,10 +132,53 @@ const collections = [
       require('./collections/cubans/cc6.jpg'),
       require('./collections/cubans/cc0.jpeg'),
       require('./collections/cubans/cc1.jpeg'),
-      require('./collections/cubans/cc3.jpeg'),
       require('./collections/cubans/cc4.jpeg'),
       require('./collections/cubans/cc5.jpeg'),
       require('./collections/cubans/cc2.jpeg')
+    ],
+    set: [
+      [
+        {src: require('./collections/cubans/cc0/cc0_jcao5u_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/cubans/cc0/cc0_jcao5u_c_scale,w_1060.jpg'), w: 1060},
+        {src: require('./collections/cubans/cc0/cc0_jcao5u_c_scale,w_1394.jpg'), w: 1394},
+        {src: require('./collections/cubans/cc0/cc0_jcao5u_c_scale,w_1715.jpg'), w: 1715},
+        {src: require('./collections/cubans/cc0/cc0_jcao5u_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/cubans/cc1/cc1_hkscu8_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/cubans/cc1/cc1_hkscu8_c_scale,w_1088.jpg'), w: 1088},
+        {src: require('./collections/cubans/cc1/cc1_hkscu8_c_scale,w_1452.jpg'), w: 1452},
+        {src: require('./collections/cubans/cc1/cc1_hkscu8_c_scale,w_1753.jpg'), w: 1753},
+        {src: require('./collections/cubans/cc1/cc1_hkscu8_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_1067.jpg'), w: 1067},
+        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_1392.jpg'), w: 1392},
+        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_1794.jpg'), w: 1794},
+        {src: require('./collections/cubans/cc2/cc2_kywrjd_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/cubans/cc4/cc4_ljnpla_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/cubans/cc4/cc4_ljnpla_c_scale,w_1067.jpg'), w: 1067},
+        {src: require('./collections/cubans/cc4/cc4_ljnpla_c_scale,w_1399.jpg'), w: 1399},
+        {src: require('./collections/cubans/cc4/cc4_ljnpla_c_scale,w_1751.jpg'), w: 1751},
+        {src: require('./collections/cubans/cc4/cc4_ljnpla_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/cubans/cc5/cc5_iripa9_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/cubans/cc5/cc5_iripa9_c_scale,w_1066.jpg'), w: 1066},
+        {src: require('./collections/cubans/cc5/cc5_iripa9_c_scale,w_1391.jpg'), w: 1391},
+        {src: require('./collections/cubans/cc5/cc5_iripa9_c_scale,w_1716.jpg'), w: 1716},
+        {src: require('./collections/cubans/cc5/cc5_iripa9_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_1027.jpg'), w: 1027},
+        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_1456.jpg'), w: 1456},
+        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_1828.jpg'), w: 1828},
+        {src: require('./collections/cubans/cc6/cc6_ciz6yb_c_scale,w_1920.jpg'), w: 1920},
+      ],
     ],
     color: [0, 1, 1, 0, 0, 0, 0]
   },
@@ -69,7 +191,44 @@ const collections = [
       require('./collections/fine jewellery/cfj3.jpeg'),
       require('./collections/fine jewellery/cfj4.jpeg'),
       require('./collections/fine jewellery/cfj5.jpeg')
-    ],    
+    ],
+    set: [
+      [
+        {src: require('./collections/fine jewellery/cfj1/cfj1_d4ldms_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/fine jewellery/cfj1/cfj1_d4ldms_c_scale,w_1042.jpg'), w: 1042},
+        {src: require('./collections/fine jewellery/cfj1/cfj1_d4ldms_c_scale,w_1333.jpg'), w: 1333},
+        {src: require('./collections/fine jewellery/cfj1/cfj1_d4ldms_c_scale,w_1381.jpg'), w: 1381},
+        {src: require('./collections/fine jewellery/cfj1/cfj1_d4ldms_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/fine jewellery/cfj2/cfj2_pftktw_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/fine jewellery/cfj2/cfj2_pftktw_c_scale,w_1101.jpg'), w: 1101},
+        {src: require('./collections/fine jewellery/cfj2/cfj2_pftktw_c_scale,w_1509.jpg'), w: 1509},
+        {src: require('./collections/fine jewellery/cfj2/cfj2_pftktw_c_scale,w_1721.jpg'), w: 1721},
+        {src: require('./collections/fine jewellery/cfj2/cfj2_pftktw_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/fine jewellery/cfj3/cfj3_jnepyg_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/fine jewellery/cfj3/cfj3_jnepyg_c_scale,w_1079.jpg'), w: 1079},
+        {src: require('./collections/fine jewellery/cfj3/cfj3_jnepyg_c_scale,w_1479.jpg'), w: 1479},
+        {src: require('./collections/fine jewellery/cfj3/cfj3_jnepyg_c_scale,w_1835.jpg'), w: 1835},
+        {src: require('./collections/fine jewellery/cfj3/cfj3_jnepyg_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/fine jewellery/cfj4/cfj4_rfy9qi_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/fine jewellery/cfj4/cfj4_rfy9qi_c_scale,w_1233.jpg'), w: 1233},
+        {src: require('./collections/fine jewellery/cfj4/cfj4_rfy9qi_c_scale,w_1552.jpg'), w: 1552},
+        {src: require('./collections/fine jewellery/cfj4/cfj4_rfy9qi_c_scale,w_1786.jpg'), w: 1786},
+        {src: require('./collections/fine jewellery/cfj4/cfj4_rfy9qi_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/fine jewellery/cfj5/cfj5_zojbk2_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/fine jewellery/cfj5/cfj5_zojbk2_c_scale,w_1388.jpg'), w: 1388},
+        {src: require('./collections/fine jewellery/cfj5/cfj5_zojbk2_c_scale,w_1462.jpg'), w: 1462},
+        {src: require('./collections/fine jewellery/cfj5/cfj5_zojbk2_c_scale,w_1909.jpg'), w: 1909},
+        {src: require('./collections/fine jewellery/cfj5/cfj5_zojbk2_c_scale,w_1920.jpg'), w: 1920},
+      ],
+    ],
     color: [1, 1, 1, 1, 1]
   },
   {
@@ -79,7 +238,30 @@ const collections = [
       require('./collections/diamonds/cd1.jpeg'),
       require('./collections/diamonds/cd2.jpeg'),
       require('./collections/diamonds/cd3.jpeg')
-    ],    
+    ],
+    set: [
+      [
+        {src: require('./collections/diamonds/cd1/cd1_uwwujg_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/diamonds/cd1/cd1_uwwujg_c_scale,w_1115.jpg'), w: 1115},
+        {src: require('./collections/diamonds/cd1/cd1_uwwujg_c_scale,w_1417.jpg'), w: 1417},
+        {src: require('./collections/diamonds/cd1/cd1_uwwujg_c_scale,w_1727.jpg'), w: 1727},
+        {src: require('./collections/diamonds/cd1/cd1_uwwujg_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/diamonds/cd2/cd2_n6cchh_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/diamonds/cd2/cd2_n6cchh_c_scale,w_1056.jpg'), w: 1056},
+        {src: require('./collections/diamonds/cd2/cd2_n6cchh_c_scale,w_1384.jpg'), w: 1384},
+        {src: require('./collections/diamonds/cd2/cd2_n6cchh_c_scale,w_1688.jpg'), w: 1688},
+        {src: require('./collections/diamonds/cd2/cd2_n6cchh_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/diamonds/cd3/cd3_pucgh6_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/diamonds/cd3/cd3_pucgh6_c_scale,w_1065.jpg'), w: 1065},
+        {src: require('./collections/diamonds/cd3/cd3_pucgh6_c_scale,w_1371.jpg'), w: 1371},
+        {src: require('./collections/diamonds/cd3/cd3_pucgh6_c_scale,w_1661.jpg'), w: 1661},
+        {src: require('./collections/diamonds/cd3/cd3_pucgh6_c_scale,w_1920.jpg'), w: 1920},
+      ]
+    ],
     color: [1, 0, 1]
   },
   {
@@ -89,7 +271,30 @@ const collections = [
       require('./collections/diamonds/cd6.jpeg'),
       require('./collections/diamonds/cd5.jpeg'),
       require('./collections/diamonds/cd4.jpeg')
-    ],    
+    ],
+    set: [
+      [
+        {src: require('./collections/diamonds/cd6/cd6_reext5_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/diamonds/cd6/cd6_reext5_c_scale,w_1193.jpg'), w: 1193},
+        {src: require('./collections/diamonds/cd6/cd6_reext5_c_scale,w_1451.jpg'), w: 1451},
+        {src: require('./collections/diamonds/cd6/cd6_reext5_c_scale,w_1760.jpg'), w: 1760},
+        {src: require('./collections/diamonds/cd6/cd6_reext5_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/diamonds/cd5/cd5_oovnoq_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/diamonds/cd5/cd5_oovnoq_c_scale,w_1155.jpg'), w: 1155},
+        {src: require('./collections/diamonds/cd5/cd5_oovnoq_c_scale,w_1527.jpg'), w: 1527},
+        {src: require('./collections/diamonds/cd5/cd5_oovnoq_c_scale,w_1808.jpg'), w: 1808},
+        {src: require('./collections/diamonds/cd5/cd5_oovnoq_c_scale,w_1920.jpg'), w: 1920},
+      ],
+      [
+        {src: require('./collections/diamonds/cd4/cd4_yanvcd_c_scale,w_600.jpg'), w: 600},
+        {src: require('./collections/diamonds/cd4/cd4_yanvcd_c_scale,w_1140.jpg'), w: 1140},
+        {src: require('./collections/diamonds/cd4/cd4_yanvcd_c_scale,w_1516.jpg'), w: 1516},
+        {src: require('./collections/diamonds/cd4/cd4_yanvcd_c_scale,w_1675.jpg'), w: 1675},
+        {src: require('./collections/diamonds/cd4/cd4_yanvcd_c_scale,w_1920.jpg'), w: 1920},
+      ],
+    ],
     color: [0, 1, 1]
   }
 ]

@@ -44,7 +44,7 @@ function App() {
   }
   
   function linkHome() {
-    console.log('yh')
+    setNavColour(0)
     setLogin(false);
     setAbout(false)
     setBookings(null);
