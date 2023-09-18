@@ -377,7 +377,7 @@ export default function Homepage({ forceToTop, doSetLogo, setNavColour }) {
   return (
     <div className='page' id='collections'>
       <div className="vidCont">
-        <video id='vid' className='homeVid' type="video/webm" src={vid} style={{opacity: '0', transition: '0.3s'}} controls={false} onPlay={vidLoaded} autoPlay loop muted playsInline></video>
+        <video id='vid' className='homeVid' type="video/webm" src={vid} style={{opacity: '0', transition: '0.3s'}} controls={false} onPlay={vidLoaded} autoPlay={true} loop={true} muted={true} playsInline={true}></video>
         <div style={{
           width: '100%',
           height: '100%',
