@@ -350,7 +350,8 @@ li:hover::after {
   text-align: center;
   font-family: 'Montserrat';
   display: flex;
-  column-gap: 28px;
+  z-index: 1;
+  /* column-gap: 28px; */
   align-items: center;
   /* height: 40px; */
   transition: opacity 0.6s;
@@ -380,16 +381,54 @@ li:hover::after {
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
+  margin-left: clamp(9px, 1vw, 14px);
+  max-width: auto;
 }
 
-.logoText::before {
-  position: absolute;
-  left: -14px;
+.logoSlide {
+  max-width: 0;
+  margin-left: 0px;
+  animation: slideText 1.3s ease 1s 1 forwards;
+}
+
+@keyframes slideLine {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+    margin-left: clamp(10px, 1vw, 14px);
+  }
+}
+
+@keyframes slideText {
+  0% {
+    max-width: 0;
+  }
+  90% {
+    max-width: 20ch;
+    margin-left: clamp(9px, 1vw, 14px);
+  }
+  100% {
+    margin-left: clamp(9px, 1vw, 14px);
+    max-width: 25ch;
+  }
+}
+
+.logoLine {
+  margin-left: clamp(9px, 1vw, 14px);
+  width: 2px;
   border-left: 2px solid;
-  content: "";
   height: 90%;
-  top: 5%;
-  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.lineSlide {
+  margin-left: 0px;
+  opacity: 0;
+  width: 0;
+  animation: slideLine 0.5s ease 0.5s forwards;
 }
 
 .logo h3 {

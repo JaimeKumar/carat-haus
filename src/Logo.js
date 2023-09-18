@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import diamond from './content/logoW.svg'
+import $ from 'jquery';
 
 export default function Logo({opac, type, clicked}) {
     let style = {};
@@ -8,10 +9,6 @@ export default function Logo({opac, type, clicked}) {
     switch (type) {
         case 'home':
             cont = 'logoCenter';
-            // style.position = 'absolute';
-            // style.left = '50%';
-            // style.top = '50%';
-            // style.transform = 'translate(-50%, -50%)';
             style.height = 'clamp(35px, 10vw, 70px)';
             style.color = 'white';
             style.cursor = 'default';
@@ -27,12 +24,20 @@ export default function Logo({opac, type, clicked}) {
             break;
         }
     style.opacity = opac;
+
+    useEffect(() => {
+        console.log($('#logotext').css('width'))
+        $('#logoline').css('opacity', '0')
+        $('#logotext').css('width', '100px')
+    }, [])
+
   return (
     <div className={cont}>
         {(type==='home') ? <div className="homeBlur" style={{opacity: opac}}></div> : <></> }
         <div className="logo" onClick={clicked} style={style}>
             <img id='logoImg' src={diamond} alt="" />
-            <div className="logoText">
+            <div className={(type==='home'?"logoLine lineSlide":'logoLine')}></div>
+            <div className={(type==='home'?"logoText logoSlide":'logoText')}>
                 <h3 style={{fontSize: hSize}}>Carat Haus</h3>
                 <span style={{fontSize: pSize, letterSpacing: pSpace}}>LONDON</span>
             </div>

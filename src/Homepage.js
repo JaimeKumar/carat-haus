@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import $ from 'jquery';
 import Logo from './Logo';
-import vid from './content/carat-haus-vid-small.mp4'
+import vid from './content/carat-haus-vid-small.webm'
 import Collection from './Collection';
 
 const collections = [
@@ -378,6 +378,12 @@ export default function Homepage({ forceToTop, doSetLogo, setNavColour }) {
     <div className='page' id='collections'>
       <div className="vidCont">
         <video id='vid' className='homeVid' type="video/mp4" src={vid} style={{opacity: '0', transition: '0.3s'}} controls={false} onPlay={vidLoaded} autoPlay loop muted playsInline></video>
+        <div style={{
+          width: '100%',
+          height: '100%',
+          zIndex: '1',
+          backgroundColor: '#00000022'
+        }}></div>
         <Logo opac={1} type={'home'} clicked={()=>{}} />
       </div>
       {collections.map((c, i) => {

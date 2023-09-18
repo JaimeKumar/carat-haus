@@ -23,13 +23,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="8.0000002"
-     inkscape:cx="-20.374999"
-     inkscape:cy="26.437499"
-     inkscape:window-width="1920"
-     inkscape:window-height="991"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="17.677669"
+     inkscape:cy="-102.17693"
+     inkscape:window-width="2400"
+     inkscape:window-height="1261"
      inkscape:window-x="-9"
-     inkscape:window-y="1341"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      inkscape:snap-global="false" />
@@ -180,9 +180,9 @@
        style="color-interpolation-filters:sRGB"
        id="filter13080"
        x="-0.012950373"
-       y="-0.016990705"
+       y="-0.017742965"
        width="1.0259007"
-       height="1.0339814">
+       height="1.0354859">
       <feGaussianBlur
          inkscape:collect="always"
          stdDeviation="0.019524685"
@@ -192,10 +192,10 @@
        inkscape:collect="always"
        style="color-interpolation-filters:sRGB"
        id="filter13312"
-       x="-0.036656708"
-       y="-0.045334757"
-       width="1.0733134"
-       height="1.0906695">
+       x="-0.036671271"
+       y="-0.047375616"
+       width="1.0733425"
+       height="1.0947512">
       <feGaussianBlur
          inkscape:collect="always"
          stdDeviation="0.058964067"
@@ -339,100 +339,160 @@
        id="path894"
        cx="333.70911"
        cy="-66.42588"
-       r="2.2450645" />
+       r="2.2450645"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
-       style="opacity:0.17588933;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter13312)"
-       d="m 333.78645,-65.196174 -1.30218,0.644548 c -0.74338,-0.631699 -1.05592,-1.333992 -1.00486,-2.240692 l 1.45844,-0.880837 1.7316,0.08027 0.66512,0.710985 z"
+       style="opacity:0.175889;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter13312)"
+       d="m 333.71202,-65.014278 -1.15017,0.510078 c -0.74338,-0.631699 -1.20793,-1.199522 -1.15687,-2.106222 l 1.45844,-0.880837 1.7316,0.08027 0.66512,0.710985 z"
        id="path10436"
-       sodipodi:nodetypes="ccccccc" />
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#88888a;fill-opacity:1;stroke:none;stroke-width:0.0324861;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 332.30141,-66.910566 v 0.129009 l 1.47644,1.705792 c 0,0 0.023,0.02867 0.0746,-0.08027 0.0516,-0.108938 -0.5103,-0.599177 -0.5103,-0.599177 z"
-       id="path1308" />
+       d="m 332.22698,-66.72867 v 0.129009 l 1.47644,1.705792 c 0,0 0.023,0.02867 0.0746,-0.08027 0.0516,-0.108938 -0.5103,-0.599177 -0.5103,-0.599177 z"
+       id="path1308"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#393a3f;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 333.79218,-65.058565 c 0.43927,-0.445585 1.01469,-1.103938 1.62552,-1.817599 l -0.0917,-0.03153 -1.48218,1.628384 z"
+       d="m 333.71775,-64.876669 c 0.43927,-0.445585 1.01469,-1.103938 1.62552,-1.817599 l -0.0917,-0.03153 -1.48218,1.628384 z"
        id="path1607"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#88888a;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 332.78017,-66.868996 v 0.106078 l 0.59632,0.971871 0.14621,0.177746 -0.0258,-0.154811 z"
-       id="path2887" />
+       d="m 332.70574,-66.6871 v 0.106078 l 0.59632,0.971871 0.14621,0.177746 -0.0258,-0.154811 z"
+       id="path2887"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#393a3f;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 332.95362,-66.747154 0.44293,-0.0087 -0.0244,-0.131816 -0.50314,-0.0172 z"
+       d="m 332.87919,-66.565258 0.44293,-0.0087 -0.0244,-0.131816 -0.50314,-0.0172 z"
        id="path5983"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#393a3f;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 334.70242,-66.745721 -0.44293,-0.0087 0.0244,-0.131816 0.50314,-0.0172 z"
+       d="m 334.62799,-66.563825 -0.44293,-0.0087 0.0244,-0.131816 0.50314,-0.0172 z"
        id="path5983-5"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#88888a;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 333.32894,-66.896045 v 0.154811 l 0.34284,1.341511 c 0,0 0.0946,0.0516 0.0946,0.02581 0,-0.02581 -0.43745,-1.522124 -0.43745,-1.522124 z"
+       d="m 333.25451,-66.714149 v 0.154811 l 0.34284,1.341511 c 0,0 0.0946,0.0516 0.0946,0.02581 0,-0.02581 -0.43745,-1.522124 -0.43745,-1.522124 z"
        id="path3885"
-       sodipodi:nodetypes="cccsc" />
+       sodipodi:nodetypes="cccsc"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#393a3f;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 333.41655,-66.861971 0.0183,0.08716 0.38516,-0.0041 0.003,-0.113522 z"
+       d="m 333.34212,-66.680075 0.0183,0.08716 0.38516,-0.0041 0.003,-0.113522 z"
        id="path6051"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#393a3f;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 333.86134,-66.766897 0.38314,-0.0041 c 0,0 0.0203,-0.105413 0.0102,-0.105413 -0.0102,0 -0.41355,0.02026 -0.41355,0.02026 z"
+       d="m 333.78691,-66.585001 0.38314,-0.0041 c 0,0 0.0203,-0.105413 0.0102,-0.105413 -0.0102,0 -0.41355,0.02026 -0.41355,0.02026 z"
        id="path6119"
-       sodipodi:nodetypes="ccscc" />
+       sodipodi:nodetypes="ccscc"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#88888a;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 333.75259,-66.85931 0.0253,1.362113 0.0488,-1.361765 z"
+       d="m 333.67816,-66.677414 0.0253,1.362113 0.0488,-1.361765 z"
        id="path3953"
-       sodipodi:nodetypes="cccc" />
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#88888a;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 333.0124,-67.423736 v 0.149077 l 0.20927,0.332558 0.11761,0.0028 z"
-       id="path4111" />
+       d="m 332.93797,-67.24184 v 0.149077 l 0.20927,0.332558 0.11761,0.0028 z"
+       id="path4111"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#88888a;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 333.86609,-67.286493 0.22502,0.345636 0.15812,0.002 -0.36895,-0.51896 -0.0253,0.150012 z"
-       id="path4179" />
+       d="m 333.79166,-67.104597 0.22502,0.345636 0.15812,0.002 -0.36895,-0.51896 -0.0253,0.150012 z"
+       id="path4179"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#88888a;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 334.78699,-67.320529 0.38416,0.389895 0.0831,-0.04014 -0.48736,-0.516038 -0.006,0.126139 z"
-       id="path4247" />
+       d="m 334.71256,-67.138633 0.38416,0.389895 0.0831,-0.04014 -0.48736,-0.516038 -0.006,0.126139 z"
+       id="path4247"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#88888a;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 334.62645,-67.389334 0.0946,0.430031 h 0.11761 l -0.14907,-0.544706 -0.0573,0.02581 z"
-       id="path4315" />
+       d="m 334.55202,-67.207438 0.0946,0.430031 h 0.11761 l -0.14907,-0.544706 -0.0573,0.02581 z"
+       id="path4315"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#393a3f;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 332.78357,-66.759425 c 0,0 0.009,-0.106831 0.009,-0.113931 0,-0.0072 -0.0792,0.0075 -0.0842,0.0055 -0.005,-0.002 -0.27974,-0.01419 -0.27974,-0.01419 l -0.006,0.133795 z"
+       d="m 332.70914,-66.577529 c 0,0 0.009,-0.106831 0.009,-0.113931 0,-0.0072 -0.0792,0.0075 -0.0842,0.0055 -0.005,-0.002 -0.27974,-0.01419 -0.27974,-0.01419 l -0.006,0.133795 z"
        id="path4383"
-       sodipodi:nodetypes="cssccc" />
+       sodipodi:nodetypes="cssccc"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#393a3f;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 335.21612,-66.855939 c 0,0 -0.0567,0.07602 -0.0567,0.08312 0,0.0072 -0.0132,0.02332 -0.0183,0.02533 -0.005,0.002 -0.33638,-0.0087 -0.33638,-0.0087 l 0.0506,-0.110853 z"
+       d="m 335.14169,-66.674043 c 0,0 -0.0567,0.07602 -0.0567,0.08312 0,0.0072 -0.0132,0.02332 -0.0183,0.02533 -0.005,0.002 -0.33638,-0.0087 -0.33638,-0.0087 l 0.0506,-0.110853 z"
        id="path4383-1"
-       sodipodi:nodetypes="cssccc" />
+       sodipodi:nodetypes="cssccc"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#393a3f;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 333.03533,-67.56708 h 1.62552 l -0.0488,0.09747 -0.009,0.0086 h -1.55098 z"
-       id="path6998" />
+       d="m 332.9609,-67.385184 h 1.62552 l -0.0488,0.09747 -0.009,0.0086 h -1.55098 z"
+       id="path6998"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
-       style="opacity:0.06324111;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter13506)"
-       d="m 333.76351,-65.0815 -0.98637,0.318308 -1.2571,-1.502784 0.2768,-1.023017 1.18115,-0.36696 1.69719,0.114672 0.60778,0.590576 z"
+       style="opacity:0.0632411;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter13506)"
+       d="m 333.68908,-64.899604 -0.98637,0.318308 -1.2571,-1.502784 0.2768,-1.023017 1.18115,-0.36696 1.69719,0.114672 0.60778,0.590576 z"
        id="path9515"
-       sodipodi:nodetypes="cccccccc" />
+       sodipodi:nodetypes="cccccccc"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="opacity:0.0513834;fill:#020000;fill-opacity:1;stroke:none;stroke-width:0.032435px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter13080)"
-       d="m 333.76351,-65.0815 -1.58824,0.183481 -0.51068,-0.934727 0.23546,-1.014748 1.07794,-0.808459 1.69719,0.114672 0.60778,0.590576 z"
+       d="m 333.68908,-64.899604 -1.51808,0.06655 -0.58084,-0.817797 0.23546,-1.014748 1.07794,-0.808459 1.69719,0.114672 0.60778,0.590576 z"
        id="path9515-0"
-       sodipodi:nodetypes="cccccccc" />
+       sodipodi:nodetypes="cccccccc"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
+       inkscape:export-xdpi="95.978104"
+       inkscape:export-ydpi="95.978104" />
     <path
        style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.0858122;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 333.08081,-66.059783 c -0.40603,-0.47311 -0.73882,-0.862968 -0.73955,-0.866355 -7.2e-4,-0.0034 0.14477,-0.156984 0.32335,-0.341328 l 0.32465,-0.33517 0.85073,2.45e-4 0.85072,2.46e-4 0.32939,0.339773 c 0.18118,0.186875 0.33003,0.342473 0.3308,0.345772 7.3e-4,0.0033 -0.34094,0.387885 -0.75934,0.854636 -0.4184,0.466752 -0.76338,0.851707 -0.76662,0.855455 -0.005,0.0056 -0.13979,-0.149179 -0.74413,-0.853385 z m 0.76199,0.743397 c 10e-4,-0.0078 0.0958,-0.361834 0.20963,-0.786805 0.11377,-0.42497 0.20842,-0.779006 0.21021,-0.786749 l 0.004,-0.01407 -0.21581,0.0013 -0.21579,0.0013 -10e-4,0.802313 c -6.1e-4,0.456803 -0.0171,0.88655 -0.0147,0.884982 0.003,-0.0015 0.023,-0.09455 0.0244,-0.102311 z m -0.0852,-9e-5 c -0.005,-0.0077 -0.21925,-0.36632 -0.47616,-0.7969 -0.25693,-0.430582 -0.46962,-0.785765 -0.47266,-0.789303 -0.004,-0.005 -0.0511,-0.0061 -0.21395,-0.0051 l -0.20844,0.0013 0.68814,0.802001 c 0.37847,0.441097 0.75021,0.892526 0.75129,0.892526 9.9e-4,0 -0.0632,-0.09683 -0.0682,-0.104546 z m 0.0532,-1.581049 c -10e-4,-0.005 -0.0485,-0.0064 -0.21179,-0.0064 -0.11531,0 -0.20954,0.0013 -0.20954,0.0028 0,0.0052 0.42997,1.686472 0.43337,1.694198 0.004,0.0083 -0.009,-1.680216 -0.0115,-1.690641 z m 0.75278,0.83005 c 0.31776,-0.354844 0.6145,-0.685471 0.65941,-0.734732 0.0449,-0.04927 0.0817,-0.09115 0.0817,-0.09308 0,-0.0019 -0.10037,-0.0036 -0.22296,-0.0036 h -0.22297 l -0.47935,0.781012 c -0.26365,0.429553 -0.55178,0.895644 -0.55402,0.900176 -0.006,0.01331 0.13015,-0.170841 0.73821,-0.849862 z m -0.73865,0.836425 c -0.003,0.004 -0.14603,-0.472655 -0.25738,-0.897626 -0.11136,-0.424972 -0.2029,-0.773171 -0.20345,-0.773782 -4.9e-4,-7.35e-4 -0.11901,-0.0018 -0.26315,-0.0026 -0.22529,-0.0012 -0.26179,-4.9e-4 -0.25958,0.0059 0.004,0.0106 0.9224,1.580403 0.96605,1.642176 0.031,0.04393 0.0253,0.01597 0.0222,0.01999 z m 0.52847,-0.889822 c 0.26153,-0.42629 0.47495,-0.775662 0.47428,-0.776383 -0.003,-0.0022 -0.53571,-0.0022 -0.53771,-2e-6 -10e-4,0.0019 -0.45365,1.657855 -0.46015,1.686609 -10e-4,0.007 -0.003,-0.01772 -10e-4,-0.01913 10e-4,-0.0014 0.26357,-0.464811 0.52508,-0.891097 z m -0.10279,-0.806249 c 0,-0.0029 -0.40133,-0.580659 -0.41244,-0.593715 -0.005,-0.0063 -0.006,0.04016 -0.006,0.291836 v 0.299305 l 0.0623,0.0015 c 0.12246,0.0031 0.35645,0.0037 0.35645,9.81e-4 z m 0.51223,-0.291713 c -0.041,-0.161993 -0.0769,-0.303419 -0.0797,-0.314277 -0.005,-0.01808 -0.005,-0.01894 -0.0115,-0.01022 -0.0222,0.03526 -0.35616,0.604316 -0.35848,0.61085 -0.003,0.0074 0.0209,0.0082 0.26045,0.0082 h 0.26332 z m 0.47031,0.211656 c -0.40157,-0.41354 -0.52843,-0.543612 -0.52926,-0.542706 -8.5e-4,9.8e-4 0.15138,0.605445 0.15602,0.619209 10e-4,0.005 0.0516,0.0064 0.22793,0.0064 h 0.22578 z m -2.43005,0.06885 c 0.0665,-0.241517 0.16311,-0.599442 0.16199,-0.600659 -7.5e-4,-8.58e-4 -0.13327,0.13416 -0.29428,0.300144 l -0.29275,0.301791 0.0575,0.0028 c 0.0317,0.0015 0.12667,0.0033 0.21128,0.0038 0.14287,9.81e-4 0.15397,3.68e-4 0.15625,-0.0079 z m 0.51472,-0.06375 c -0.2435,-0.410027 -0.31964,-0.536989 -0.32269,-0.538126 -0.003,-7.35e-4 -0.0405,0.13353 -0.0854,0.298361 -0.045,0.164831 -0.0827,0.30256 -0.0839,0.306066 -10e-4,0.0051 0.0538,0.0064 0.26653,0.0064 h 0.26859 z m 0.49517,-0.228231 c 0,-0.165499 -0.001,-0.300812 -0.004,-0.300692 -0.004,2.45e-4 -0.41114,0.587776 -0.41449,0.597188 -8.6e-4,0.0024 0.0921,0.0045 0.20824,0.0045 h 0.20979 z m 0.66298,-0.02708 c 0.10382,-0.176193 0.18873,-0.321357 0.18873,-0.322585 0,-0.0012 -0.18754,-0.0022 -0.41679,-0.0022 -0.34374,0 -0.41653,0.0012 -0.41527,0.0068 0.003,0.01288 0.44782,0.646344 0.4512,0.642387 10e-4,-0.0022 0.0884,-0.148134 0.19213,-0.324326 z m -0.88236,-0.0078 c 0.11812,-0.170658 0.21467,-0.311804 0.21467,-0.313659 0,-0.0018 -0.18123,-0.0033 -0.40272,-0.0033 -0.23124,0 -0.40206,0.0019 -0.40116,0.0045 0.004,0.0106 0.36888,0.622632 0.37158,0.622716 10e-4,5.6e-5 0.0996,-0.139534 0.21763,-0.310192 z"
+       d="m 333.00638,-65.877887 c -0.40603,-0.47311 -0.73882,-0.862968 -0.73955,-0.866355 -7.2e-4,-0.0034 0.14477,-0.156984 0.32335,-0.341328 l 0.32465,-0.33517 0.85073,2.45e-4 0.85072,2.46e-4 0.32939,0.339773 c 0.18118,0.186875 0.33003,0.342473 0.3308,0.345772 7.3e-4,0.0033 -0.34094,0.387885 -0.75934,0.854636 -0.4184,0.466752 -0.76338,0.851707 -0.76662,0.855455 -0.005,0.0056 -0.13979,-0.149179 -0.74413,-0.853385 z m 0.76199,0.743397 c 10e-4,-0.0078 0.0958,-0.361834 0.20963,-0.786805 0.11377,-0.42497 0.20842,-0.779006 0.21021,-0.786749 l 0.004,-0.01407 -0.21581,0.0013 -0.21579,0.0013 -10e-4,0.802313 c -6.1e-4,0.456803 -0.0171,0.88655 -0.0147,0.884982 0.003,-0.0015 0.023,-0.09455 0.0244,-0.102311 z m -0.0852,-9e-5 c -0.005,-0.0077 -0.21925,-0.36632 -0.47616,-0.7969 -0.25693,-0.430582 -0.46962,-0.785765 -0.47266,-0.789303 -0.004,-0.005 -0.0511,-0.0061 -0.21395,-0.0051 l -0.20844,0.0013 0.68814,0.802001 c 0.37847,0.441097 0.75021,0.892526 0.75129,0.892526 9.9e-4,0 -0.0632,-0.09683 -0.0682,-0.104546 z m 0.0532,-1.581049 c -0.001,-0.005 -0.0485,-0.0064 -0.21179,-0.0064 -0.11531,0 -0.20954,0.0013 -0.20954,0.0028 0,0.0052 0.42997,1.686472 0.43337,1.694198 0.004,0.0083 -0.009,-1.680216 -0.0115,-1.690641 z m 0.75278,0.83005 c 0.31776,-0.354844 0.6145,-0.685471 0.65941,-0.734732 0.0449,-0.04927 0.0817,-0.09115 0.0817,-0.09308 0,-0.0019 -0.10037,-0.0036 -0.22296,-0.0036 h -0.22297 l -0.47935,0.781012 c -0.26365,0.429553 -0.55178,0.895644 -0.55402,0.900176 -0.006,0.01331 0.13015,-0.170841 0.73821,-0.849862 z m -0.73865,0.836425 c -0.003,0.004 -0.14603,-0.472655 -0.25738,-0.897626 -0.11136,-0.424972 -0.2029,-0.773171 -0.20345,-0.773782 -4.9e-4,-7.35e-4 -0.11901,-0.0018 -0.26315,-0.0026 -0.22529,-0.0012 -0.26179,-4.9e-4 -0.25958,0.0059 0.004,0.0106 0.9224,1.580403 0.96605,1.642176 0.031,0.04393 0.0253,0.01597 0.0222,0.01999 z m 0.52847,-0.889822 c 0.26153,-0.42629 0.47495,-0.775662 0.47428,-0.776383 -0.003,-0.0022 -0.53571,-0.0022 -0.53771,-2e-6 -10e-4,0.0019 -0.45365,1.657855 -0.46015,1.686609 -10e-4,0.007 -0.003,-0.01772 -10e-4,-0.01913 10e-4,-0.0014 0.26357,-0.464811 0.52508,-0.891097 z m -0.10279,-0.806249 c 0,-0.0029 -0.40133,-0.580659 -0.41244,-0.593715 -0.005,-0.0063 -0.006,0.04016 -0.006,0.291836 v 0.299305 l 0.0623,0.0015 c 0.12246,0.0031 0.35645,0.0037 0.35645,9.81e-4 z m 0.51223,-0.291713 c -0.041,-0.161993 -0.0769,-0.303419 -0.0797,-0.314277 -0.005,-0.01808 -0.005,-0.01894 -0.0115,-0.01022 -0.0222,0.03526 -0.35616,0.604316 -0.35848,0.61085 -0.003,0.0074 0.0209,0.0082 0.26045,0.0082 h 0.26332 z m 0.47031,0.211656 c -0.40157,-0.41354 -0.52843,-0.543612 -0.52926,-0.542706 -8.5e-4,9.8e-4 0.15138,0.605445 0.15602,0.619209 10e-4,0.005 0.0516,0.0064 0.22793,0.0064 h 0.22578 z m -2.43005,0.06885 c 0.0665,-0.241517 0.16311,-0.599442 0.16199,-0.600659 -7.5e-4,-8.58e-4 -0.13327,0.13416 -0.29428,0.300144 l -0.29275,0.301791 0.0575,0.0028 c 0.0317,0.0015 0.12667,0.0033 0.21128,0.0038 0.14287,9.81e-4 0.15397,3.68e-4 0.15625,-0.0079 z m 0.51472,-0.06375 c -0.2435,-0.410027 -0.31964,-0.536989 -0.32269,-0.538126 -0.003,-7.35e-4 -0.0405,0.13353 -0.0854,0.298361 -0.045,0.164831 -0.0827,0.30256 -0.0839,0.306066 -10e-4,0.0051 0.0538,0.0064 0.26653,0.0064 h 0.26859 z m 0.49517,-0.228231 c 0,-0.165499 -0.001,-0.300812 -0.004,-0.300692 -0.004,2.45e-4 -0.41114,0.587776 -0.41449,0.597188 -8.6e-4,0.0024 0.0921,0.0045 0.20824,0.0045 h 0.20979 z m 0.66298,-0.02708 c 0.10382,-0.176193 0.18873,-0.321357 0.18873,-0.322585 0,-0.0012 -0.18754,-0.0022 -0.41679,-0.0022 -0.34374,0 -0.41653,0.0012 -0.41527,0.0068 0.003,0.01288 0.44782,0.646344 0.4512,0.642387 0.001,-0.0022 0.0884,-0.148134 0.19213,-0.324326 z m -0.88236,-0.0078 c 0.11812,-0.170658 0.21467,-0.311804 0.21467,-0.313659 0,-0.0018 -0.18123,-0.0033 -0.40272,-0.0033 -0.23124,0 -0.40206,0.0019 -0.40116,0.0045 0.004,0.0106 0.36888,0.622632 0.37158,0.622716 10e-4,5.6e-5 0.0996,-0.139534 0.21763,-0.310192 z"
        id="path8094-9-4"
-       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\diamondIconWhite.png"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\src\content\favicon.png.png"
        inkscape:export-xdpi="95.978104"
        inkscape:export-ydpi="95.978104"
        sodipodi:nodetypes="csscccsssscccssccccsccsssscssssssssssssscsssssscsssssssssssssscsssssssscssssscscssccscssssscssssscssssssssssscs" />
