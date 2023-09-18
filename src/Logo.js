@@ -22,6 +22,8 @@ export default function Logo({opac, type, clicked}) {
             pSize = '0.7rem'
             hSize = '1.3rem'
             break;
+        default:
+            break;
         }
     style.opacity = opac;
 
