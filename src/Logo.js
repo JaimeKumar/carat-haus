@@ -26,7 +26,6 @@ export default function Logo({opac, type, clicked}) {
     style.opacity = opac;
 
     useEffect(() => {
-        console.log($('#logotext').css('width'))
         $('#logoline').css('opacity', '0')
         $('#logotext').css('width', '100px')
     }, [])
