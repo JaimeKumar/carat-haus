@@ -310,14 +310,17 @@ export default function Homepage({ forceToTop, doSetLogo, setNavColour }) {
   }
 
   function roundScroll(dir) {
+    console.log($('#collections').scrollTop()/sh)
     if (dir > 0) {
+      let newScroll = Math.round(($('#collections').scrollTop()/sh) + 0.4);
+      if (newScroll > collections.length) return;
       if ((($('#collections').scrollTop()/sh) % 1) > 0.1) {
         $('#collections')[0].scrollTo({
           left: 0,
-          top: Math.round(($('#collections').scrollTop()/sh) + 0.4) * sh,
+          top: newScroll * sh,
           behavior: 'smooth'
         })
-        setScroll(Math.round(($('#collections').scrollTop()/sh) + 0.4))
+        setScroll(newScroll)
       }
     } else if (dir < 0) {
       if ((($('#collections').scrollTop()/sh) % 1) < 0.9) {
@@ -332,6 +335,7 @@ export default function Homepage({ forceToTop, doSetLogo, setNavColour }) {
   }
 
   function updatePos(c, slide) {
+    console.log(c)
     setNavColour(collections[c].color[slide]);
   }
 
@@ -352,6 +356,7 @@ export default function Homepage({ forceToTop, doSetLogo, setNavColour }) {
         x: (touchStart.current.x > e.changedTouches[0].clientX) ? 1: -1,
       }
       roundScroll(dir.y)
+      console.log('touchend!')
     })
   }, [])
 
