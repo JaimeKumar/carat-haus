@@ -743,6 +743,10 @@ td {
   font-family: 'Montserrat';
 }
 
+.vidstill {
+  width: 100%;
+}
+
 .homeVid {
   min-width: 100vw;
   min-height: 100vh;
