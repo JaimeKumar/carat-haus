@@ -357,6 +357,7 @@ export default function Homepage({ forceToTop, doSetLogo, setNavColour, about, b
         y: (touchStart.current.y > e.changedTouches[0].clientY) ? 1: -1,
         x: (touchStart.current.x > e.changedTouches[0].clientX) ? 1: -1,
       }
+      console.log(e.target)
       roundScroll(dir.y)
     })
   }, [])
