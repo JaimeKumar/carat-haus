@@ -755,6 +755,12 @@ td {
   position: relative;
 }
 
+.playerCont {
+  min-width: 100vw;
+  min-height: 100vh;
+
+}
+
 .vidstill {
   min-width: 100vw;
   min-height: 100vh;
