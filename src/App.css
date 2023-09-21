@@ -422,11 +422,9 @@ li:hover::after {
 @keyframes navSlide {
   from {
     opacity: 0;
-    /* max-width: 0px; */
   }
   to {
     opacity: 1;
-    /* max-width: 100%; */
   }
 }
 
