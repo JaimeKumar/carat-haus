@@ -33,7 +33,7 @@ export default function Logo({opac, type, clicked}) {
     }, [])
 
   return (
-    <div className={cont}>
+    <div className={''}>
         {(type==='home') ? <div className="homeBlur" style={{opacity: opac}}></div> : <></> }
         <div className="logo" onClick={clicked} style={style}>
             <img id='logoImg' src={diamond} alt="" />

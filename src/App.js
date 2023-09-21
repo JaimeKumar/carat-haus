@@ -18,7 +18,6 @@ function App() {
   const [about, setAbout] = useState(false)
   const [logoOpac, setLogo] = useState(0)
   const [triggerScroll, setTrigger] = useState(false)
-  const [logoTriggerFade, setLogoTrigger] = useState(false)
   const [login, setLogin] = useState(false);
   const loginUsername = useRef(null)
   const loginPassword = useRef(null)
@@ -153,12 +152,12 @@ function App() {
       </div>
       <div className="navbar" id='nav'>
           <Logo clicked={linkHome} opac={logoOpac} type={'nav'} />
-          <ul>
+          <ul style={{opacity: logoOpac}}>
             <li onClick={linkHome}>Home</li>
             <li onClick={linkAbout}>About Us</li>
             <li onClick={linkBook}>Book a Consultation</li>
-            <li onClick={()=>{setLogo(1); if(auth) {getBooking()} else {setLogin(true)}}} style={{transform: 'translateY(2px)'}}><MdOutlineExitToApp /></li>
           </ul>
+          <div style={{opacity: 1-logoOpac, position: 'absolute', right: '50px', fontSize: 'clamp(9px, 2vw, 1rem)'}} onClick={()=>{setLogo(1); if(auth) {getBooking()} else {setLogin(true)}}}><MdOutlineExitToApp /></div>
           <div className="menuButton" onClick={toggleMenu}><RiMenuFill /></div>
       </div>
 
@@ -166,6 +165,8 @@ function App() {
         forceToTop={triggerScroll}
         doSetLogo={doSetLogo}
         setNavColour={setNavColour}
+        about={linkAbout}
+        book={linkBook}
       />
 
       {bookings ?

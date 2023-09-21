@@ -52,10 +52,29 @@ h1 {
   height: 100%;
   background-color: #eaeaea;
   z-index: -1;
+  display: none;
+}
+
+ul {
+  list-style: none;
+  font-family: 'Montserrat';
+  display: flex;
+  column-gap: clamp(25px, 5vw, 40px);
+  justify-content: center;
+  row-gap: 20px;
+  color: white;
+  font-size: clamp(9px, 3vw, 0.8rem);
+  transition: opacity 0.5s;
+  overflow: hidden;
+  /* flex-wrap: wrap; */
+  /* max-width: 80vw; */
 }
 
 li {
+  cursor: pointer;
+  text-transform: uppercase;
   position: relative;
+  white-space: nowrap;
 }
 
 li::after {
@@ -76,10 +95,14 @@ li:hover::after {
 
 .sideMenu ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font-size: small;
   font-family: 'Montserrat';
 }
 
-.sideMenu ul li {
+.sideMenu li {
   margin-top: 20px;
 }
 
@@ -340,13 +363,6 @@ li:hover::after {
   transition: color 0.6s;
 }
 
-.logoCenter {
-  width: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-}
-
 .logo {
   text-align: center;
   font-family: 'Montserrat';
@@ -403,6 +419,17 @@ li:hover::after {
   }
 }
 
+@keyframes navSlide {
+  from {
+    opacity: 0;
+    /* max-width: 0px; */
+  }
+  to {
+    opacity: 1;
+    /* max-width: 100%; */
+  }
+}
+
 @keyframes slideText {
   0% {
     max-width: 0;
@@ -443,18 +470,6 @@ li:hover::after {
 .logo span {
   margin: 0;
   letter-spacing: 8px;
-}
-
-.navbar ul {
-  list-style: none;
-  font-family: 'Montserrat';
-  display: flex;
-  column-gap: 40px;
-}
-
-.navbar ul li {
-  cursor: pointer;
-  text-transform: uppercase;
 }
 
 .menuButton {
@@ -753,29 +768,8 @@ td {
   justify-content: center;
   align-items: center;
   position: relative;
-}
-
-.playerCont {
-  min-width: 100vw;
-  min-height: 100vh;
-
-}
-
-.vidstill {
-  min-width: 100vw;
-  min-height: 100vh;
-  min-height: 100svh;
-  object-fit: cover;
-}
-
-.homeVid {
-  min-width: 100vw;
-  min-height: 100vh;
-  min-height: 100svh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  row-gap: 50px;
+  flex-direction: column;
 }
 
 .loginBox {
@@ -1023,6 +1017,10 @@ td {
 }
 
 @media only screen and (max-width: 900px) {
+  .sideMenu {
+    display: block;
+  }
+
   .navbar ul {
     display: none;
   }

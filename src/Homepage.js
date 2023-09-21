@@ -1,8 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import $ from 'jquery';
-import ReactPlayer from 'react-player';
-// import vid from './content/carat-haus-vid-short-sm.mp4'
-// import vidStill from './content/vid-still.webp'
 import Logo from './Logo';
 import Collection from './Collection';
 
@@ -301,17 +298,12 @@ const collections = [
   }
 ]
 
-export default function Homepage({ forceToTop, doSetLogo, setNavColour }) {  
+export default function Homepage({ forceToTop, doSetLogo, setNavColour, about, book }) {  
   const touchStart = useRef(null);
   const [scrollPos, setScroll] = useState(0)
   const sh = window.innerHeight;
 
-  function vidLoaded() {
-    $('#vid').css({opacity: 1})
-  }
-
   function roundScroll(dir) {
-    console.log($('#collections').scrollTop()/sh)
     if (dir > 0) {
       let newScroll = Math.round(($('#collections').scrollTop()/sh) + 0.4);
       if (newScroll > collections.length) return;
@@ -333,6 +325,15 @@ export default function Homepage({ forceToTop, doSetLogo, setNavColour }) {
         setScroll(Math.round(($('#collections').scrollTop()/sh) - 0.4))
       }
     }
+  }
+
+  function linkCollections() {
+    $('#collections')[0].scrollTo({
+      left: 0,
+      top: sh,
+      behavior: 'smooth'
+    })
+    setScroll(1)
   }
 
   function updatePos(c, slide) {
@@ -379,41 +380,20 @@ export default function Homepage({ forceToTop, doSetLogo, setNavColour }) {
   useEffect(() => {
     setScroll(0);
   }, [forceToTop])
+
+  // function vidLoaded() {
+  //   $('#vid').css({opacity: 1})
+  // }
   
   return (
     <div className='page' id='collections'>
-      <div className="vidCont">
-        <div className="playerCont">
-          <ReactPlayer
-            url="https://ch-server-ul9n.onrender.com/getVid"
-            controls={false}
-            width={'100%'}
-            height={'100%'}
-            playing={true}
-            loop={true}
-            muted={true}
-            playsinline={true}
-          />
-        </div>
-
-        {/* <iframe 
-          src="https://youtube.com/embed/oAjqJ6cDMkM?modestbranding=1&;autoplay=1&;controls=0&;showinfo=0&;autohide=1"
-          frameborder="0"
-          width={'100%'}
-          height={'100%'}>
-        </iframe> */}
-
-        {/* <iframe width="960" height="923" src="https://www.youtube.com/embed/oAjqJ6cDMkM" title="carat haus vid" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
-
-        {/* <img className='vidstill' src={vidStill} alt="" /> */}
-        {/* <video id='vid' className='homeVid' type="video/mp4" src={vid} style={{opacity: '0', transition: '0.3s'}} controls={false} onPlay={vidLoaded} autoPlay={true} loop={true} muted={true} playsInline={true}></video> */}
-        <div style={{
-          width: '100%',
-          height: '100%',
-          zIndex: '1',
-          backgroundColor: '#00000022'
-        }}></div>
+      <div className="vidCont">        
         <Logo opac={1} type={'home'} clicked={()=>{}} />
+        <ul style={{opacity: '0', animation: 'navSlide 2s ease 2s 1 forwards'}}>
+          <li onClick={about}>About Us</li>
+          <li onClick={linkCollections}>Our Collections</li>
+          <li onClick={book}>Book a Consultation</li>
+        </ul>
       </div>
       {collections.map((c, i) => {
         return <Collection collection={c} scrollPos={scrollPos} index={i} slideChange={updatePos} />
