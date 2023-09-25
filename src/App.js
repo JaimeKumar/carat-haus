@@ -7,6 +7,7 @@ import Logo from './Logo';
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react'
 import { MdOutlineExitToApp } from 'react-icons/md'
+import { BsArrowBarLeft } from 'react-icons/bs'
 import { RiMenuFill } from 'react-icons/ri'
 import $ from 'jquery';
 
@@ -144,10 +145,12 @@ function App() {
     <div className="App">
       <div className="sideMenu">
         <ul>
+          <BsArrowBarLeft style={{marginTop: '10px'}} onClick={toggleMenu} />
+          {/* <li onClick={toggleMenu}>X</li> */}
           <li onClick={() => {toggleMenu(); linkHome();}}>Home</li>
           <li onClick={() => {toggleMenu(); linkAbout()}}>About Us</li>
           <li onClick={() => {toggleMenu(); linkBook();}}>Book a Consultation</li>
-          <li onClick={() => {toggleMenu(); setLogo(1); setLogin(true)}}><MdOutlineExitToApp /></li>
+          {/* <li onClick={() => {toggleMenu(); setLogo(1); setLogin(true)}}><MdOutlineExitToApp /></li> */}
         </ul>
       </div>
       <div className="navbar" id='nav'>
@@ -157,7 +160,7 @@ function App() {
             <li onClick={linkAbout}>About Us</li>
             <li onClick={linkBook}>Book a Consultation</li>
           </ul>
-          <div style={{opacity: 1-logoOpac, position: 'absolute', right: '50px', fontSize: 'clamp(9px, 2vw, 1rem)'}} onClick={()=>{setLogo(1); if(auth) {getBooking()} else {setLogin(true)}}}><MdOutlineExitToApp /></div>
+          <div style={{opacity: 1-logoOpac, position: 'absolute', right: '30px', fontSize: 'clamp(12px, 2vw, 1rem)'}} onClick={()=>{setLogo(1); if(auth) {getBooking()} else {setLogin(true)}}}><MdOutlineExitToApp /></div>
           <div className="menuButton" onClick={toggleMenu}><RiMenuFill /></div>
       </div>
 
