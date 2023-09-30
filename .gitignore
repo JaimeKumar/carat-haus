@@ -2,6 +2,7 @@
 
 # dependencies
 /server
+/src/content
 /videos
 /node_modules
 /.pnp

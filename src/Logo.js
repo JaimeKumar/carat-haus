@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import diamond from './content/logoW.svg'
+import diamond from './collections/logoW.svg'
 import $ from 'jquery';
 
 export default function Logo({opac, type, clicked}) {

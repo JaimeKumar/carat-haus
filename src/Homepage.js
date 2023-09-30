@@ -235,9 +235,11 @@ export default function Homepage({ forceToTop, doSetLogo, setNavColour, about, b
       if (this.t <= -5) {
         this.t = sh + this.r;
         this.v = Math.random() + 0.1;
+        this.o = 1;
       }
 
       this.t -= this.v;
+      this.o -= 0.0013 * this.v;
       this.v += Math.random() * 0.006
     }
   }
@@ -287,7 +289,7 @@ export default function Homepage({ forceToTop, doSetLogo, setNavColour, about, b
   function animateBG() {
     blobs.forEach(b => {
       b.update()
-      $(`#${b.id}`).css({top: b.t})
+      $(`#${b.id}`).css({top: b.t, opacity: b.o})
     })
     requestAnimationFrame(animateBG)
   }
@@ -348,7 +350,7 @@ export default function Homepage({ forceToTop, doSetLogo, setNavColour, about, b
       <div className="vidCont">
         <div className="bgAnim">
           {blobs.map((b,i) => {
-            return <div className="blob" id={b.id} style={{left: b.l + 'px', top: b.t + 'px', width: b.r + 'px', opacity: 1, backgroundColor: b.c}}></div>
+            return <div className="blob" id={b.id} style={{left: b.l + 'px', top: b.t + 'px', width: b.r + 'px', backgroundColor: b.c}}></div>
           })}
         </div>
         <div className='centerLogo hideCLogo' id="centerLogo">
