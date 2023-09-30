@@ -146,11 +146,9 @@ function App() {
       <div className="sideMenu">
         <ul>
           <BsArrowBarLeft style={{marginTop: '10px'}} onClick={toggleMenu} />
-          {/* <li onClick={toggleMenu}>X</li> */}
           <li onClick={() => {toggleMenu(); linkHome();}}>Home</li>
           <li onClick={() => {toggleMenu(); linkAbout()}}>About Us</li>
           <li onClick={() => {toggleMenu(); linkBook();}}>Book a Consultation</li>
-          {/* <li onClick={() => {toggleMenu(); setLogo(1); setLogin(true)}}><MdOutlineExitToApp /></li> */}
         </ul>
       </div>
       <div className="navbar" id='nav'>
@@ -170,6 +168,7 @@ function App() {
         setNavColour={setNavColour}
         about={linkAbout}
         book={linkBook}
+        aboutTrigger={about}
       />
 
       {bookings ?

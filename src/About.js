@@ -42,7 +42,7 @@ export default function About({ close }) {
                         skip.current = false;
                     }
                 })
-            }, 10000)
+            }, 9000)
         })
     }
 
