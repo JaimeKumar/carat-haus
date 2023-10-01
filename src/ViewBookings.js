@@ -4,6 +4,12 @@ import $ from 'jquery';
 
 
 export default function ViewBookings({bookings, del, close, refreshing}) {
+  let bookingsObj = {...bookings}
+  bookings = Object.values(bookings)
+  bookings.forEach((booking, i) => {
+    booking.id = Object.keys(bookingsObj)[i]
+  })
+
   bookings.sort((a, b) => new Date(a.timeslot) - new Date(b.timeslot))
   
   var sw = window.innerWidth;

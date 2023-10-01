@@ -5,15 +5,17 @@ import Homepage from './Homepage';
 import About from './About';
 import Logo from './Logo';
 import axios from 'axios';
-import React, { useEffect, useRef, useState } from 'react'
+import React, {  useRef, useState } from 'react'
 import { MdOutlineExitToApp } from 'react-icons/md'
 import { BsArrowBarLeft } from 'react-icons/bs'
 import { RiMenuFill } from 'react-icons/ri'
 import $ from 'jquery';
 
+const server = 'http://localhost:4000/'
+// const server = 'https://ch-server-ul9n.onrender.com/'
+
 
 function App() {
-
   const [bookings, setBookings] = useState(null);
   const [makeApt, setMakeApt] = useState(false)
   const [about, setAbout] = useState(false)
@@ -32,7 +34,7 @@ function App() {
 
   function deleteAppt(aptid) {
     setBookingsRefreshing(true)
-    axios.post('https://ch-server-ul9n.onrender.com/deleteBooking', {id: aptid})
+    axios.post(`${server}deleteBooking`, {id: aptid})
     .then((res)=>{
         setBookingsRefreshing(false)
         setBookings(res.data)
@@ -88,7 +90,7 @@ function App() {
   }
 
   function getBooking() {
-    axios.get('https://ch-server-ul9n.onrender.com/getBookings')
+    axios.get(`${server}getBookings`)
       .then(res => {
         setAuth(true)
         setWaitingLogin(false)
@@ -115,7 +117,7 @@ function App() {
     const username = formData.get('username');
     const password = formData.get('password');
 
-    axios.post('https://ch-server-ul9n.onrender.com/login', {name: username, pw: password})
+    axios.post(`${server}login`, {name: username, pw: password})
       .then(res => {
         console.log(res)
         setAuth(true)
@@ -177,7 +179,7 @@ function App() {
         </div> :
         makeApt?
           <div className="page" style={{justifyContent: 'center'}}>
-            <Booking key='bookingKey' close={closeBookings} />
+            <Booking key='bookingKey' close={closeBookings} server={server} />
           </div>:
         about?
           <div className="overPage">

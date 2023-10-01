@@ -4,7 +4,7 @@ import axios from 'axios';
 import Reciept from './Reciept';
 import {add, format} from "date-fns"
 
-export default function TimePicker({date, backToCalendar}) {
+export default function TimePicker({date, backToCalendar, server}) {
 
   const [timeslots, setSlots] = useState(null)
   const [reqSuccess, setSuccess] = useState(null)
@@ -30,7 +30,8 @@ export default function TimePicker({date, backToCalendar}) {
   const [takenSlots, setTaken] = useState([])
   
   useEffect(() => {
-    axios.get('https://ch-server-ul9n.onrender.com/getBookings')
+    console.log('hello')
+    axios.get(`${server}getBookings`)
     .then(res => {
       setTaken(res.data.filter(s=>format(new Date(s.timeslot), 'do MMM y')===format(new Date(date), 'do MMM y')))
     })
@@ -83,8 +84,7 @@ export default function TimePicker({date, backToCalendar}) {
 
     if (time && name && email && number) {
       setLoading(true)
-      axios.post('https://ch-server-ul9n.onrender.com/book', {
-      // date: date,
+      axios.post(`${server}book`, {
       name: name,
       time: time,
       email: email,
@@ -93,7 +93,6 @@ export default function TimePicker({date, backToCalendar}) {
           .then(res => {
               setLoading(false)
               setSuccess({...res.data})
-              console.log(res.data)
             })
             .catch(err => {
               setLoading(false)
