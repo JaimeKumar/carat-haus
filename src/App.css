@@ -117,10 +117,10 @@ ul li:hover::after {
 
 .overPage {
   width: 100vw;
-  height: 100vh;
-  height: 100svh;
+  height: calc(100vh - 90px);
+  height: calc(100svh - 90px);
   position: absolute;
-  top: 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
