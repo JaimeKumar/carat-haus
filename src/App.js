@@ -11,8 +11,8 @@ import { BsArrowBarLeft } from 'react-icons/bs'
 import { RiMenuFill } from 'react-icons/ri'
 import $ from 'jquery';
 
-const server = 'http://localhost:4000/'
-// const server = 'https://ch-server-ul9n.onrender.com/'
+// const server = 'http://localhost:4000/'
+const server = 'https://ch-server-ul9n.onrender.com/'
 
 
 function App() {
