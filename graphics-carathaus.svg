@@ -24,8 +24,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.04"
-     inkscape:cx="-4425"
-     inkscape:cy="5237.5"
+     inkscape:cx="-4562.5"
+     inkscape:cy="7637.5"
      inkscape:window-width="1920"
      inkscape:window-height="991"
      inkscape:window-x="-9"
@@ -315,7 +315,7 @@
        inkscape:export-ydpi="95.978104" />
     <text
        xml:space="preserve"
-       style="font-size:252.794px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:149.201px;stroke-width:1.31665"
+       style="font-size:252.794px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:149.201px;stroke-width:1.31665;stroke:none"
        x="-672.90009"
        y="1783.2379"
        id="text3660-9"
@@ -324,7 +324,7 @@
        inkscape:export-ydpi="95.978104"><tspan
          sodipodi:role="line"
          id="tspan3658-8"
-         style="stroke-width:1.31665"
+         style="stroke-width:1.31665;stroke:none"
          x="-672.90009"
          y="1783.2379">LONDON</tspan></text>
     <text
@@ -343,45 +343,45 @@
          y="1393.1735">CARAT HAUS</tspan></text>
     <path
        id="path8094-9-6-13-3"
-       style="fill:#c9a559;fill-opacity:1;stroke:#c9a559;stroke-width:15.2429;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:15.2429;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -1949.0807,2806.2583 c -38.42,40.0021 -77.6777,79.2362 -115.1048,120.1641 85.6565,100.8236 171.1639,201.051 258.3948,300.5276 11.8882,9.6908 -20.1578,-25.7259 -26.1675,-33.8086 -73.6719,-88.6357 -149.2657,-175.6434 -224.2054,-263.203 24.9968,0.2703 50.1595,-1.4108 75.0307,0.6668 59.3265,97.6907 116.5335,196.6912 176.5538,293.942 7.2233,7.2169 -11.7964,-21.7182 -15.3084,-28.2468 -52.1943,-88.1323 -104.0818,-176.4494 -155.442,-265.0699 30.8166,-2.3535 61.9563,-1.5373 92.8534,-0.5847 24.1617,90.5235 46.6241,181.528 73.7375,271.2369 -23.1786,-90.3058 -46.4105,-180.5997 -69.2317,-270.9966 24.9011,-0.3124 50.0811,-1.5903 74.8443,0.6356 1.4309,86.964 1.659,173.949 2.1862,260.9238 2.4692,-87.1852 1.6391,-174.4098 1.9514,-261.618 25.556,-0.155 51.1124,-0.3145 76.6684,-0.4762 -25.7379,98.827 -53.7301,198.2796 -78.5741,296.5923 -0.4652,14.1794 20.2311,-22.2068 27.1114,-25.1349 81.4167,-91.2423 163.7404,-181.6924 244.1985,-273.7801 -38.524,-41.1266 -78.1465,-81.2165 -117.2693,-121.7752 -100.7426,0 -201.4852,9e-4 -302.2278,0 z m 148.0966,425.4363 c -0.155,-0.155 0.089,0.4075 0,0 z m 0.044,-1.3246 c 0,-10.2088 0.2857,-54.6116 -0.3655,-23.1647 -0.066,11.065 0.066,24.2393 -4.164,5.4527 -8.0937,-29.3893 2.5435,13.4433 4.5299,17.712 z m -144.4483,-421.058 c 17.2715,2.3766 42.7015,-0.1994 63.0996,0.5892 25.8056,0.1102 51.6181,-0.3124 77.4194,0.1549 -23.0208,38.4766 -49.6093,74.6905 -75.4934,111.2437 -22.2716,-36.4369 -44.1215,-73.1396 -65.6609,-110.0139 -1.5947,19.8563 23.4834,40.3276 31.041,60.7844 10.6647,17.9201 21.3103,35.8521 31.9611,53.7805 -31.6712,-0.4497 -63.5334,1.1031 -95.0588,-1.1297 9.6931,-34.7363 18.7303,-69.6589 28.9804,-104.2379 -12.0886,34.5807 -22.6695,70.1266 -33.9622,104.6628 -24.7982,1.216 -49.738,0.3743 -74.5589,-0.6623 37.3785,-38.4206 74.4211,-77.2263 112.2327,-115.1815 z m -0.6357,1.9824 c 1.32,-1.0809 -1.4906,-0.7621 0,0 z m 220.5453,-1.3932 c 24.6783,0.089 49.364,-0.1102 74.0369,0.3942 -22.2997,38.4494 -44.9048,76.7238 -67.6531,114.9098 -27.525,-37.436 -54.2351,-75.5346 -80.1485,-114.1069 24.4152,-2.2151 49.2372,-0.68 73.7647,-1.1983 z m 76.7003,3.5711 c 10.8278,37.3291 18.8824,75.4836 28.0184,113.29 -30.6598,-0.257 -61.3638,0.629 -91.9892,-0.6646 8.1269,-20.3677 23.9398,-42.0706 35.2221,-62.93 9.3408,-16.6811 20.0794,-32.6983 28.7487,-49.6951 z m 4.2968,2.1684 c 36.3882,36.7586 72.2084,74.0816 108.308,111.1257 -26.8506,-0.4296 -53.8844,1.0809 -80.5935,-1.134 -9.4558,-36.6077 -18.6826,-73.2769 -27.7145,-109.9915 z m -158.8865,3.3535 c 1.1009,35.6048 0.4673,71.2442 0.6269,106.8648 -24.7496,-0.1994 -49.5402,0.5604 -74.2549,-0.7841 24.1231,-35.6392 48.647,-71.0365 73.629,-106.0798 z m 4.937,1.7143 c 24.8576,34.8667 49.3275,70.1256 73.4332,105.5536 -24.7972,0.4054 -49.6045,0.2304 -74.3952,-0.4541 0.3787,-35.0192 -0.928,-70.1826 0.9613,-105.099 z m 128.1816,110.5723 c 16.2742,3.251 64.1011,-8.6966 39.8581,17.4551 -50.624,84.8827 -108.8971,165.0834 -155.0582,252.631 -5.4537,9.5389 -16.7985,33.5237 -8.8418,9.5533 25.306,-93.1497 50.6264,-186.2962 76.2857,-279.3491 10.7946,-1.2403 33.0791,-0.1329 47.7562,-0.2902 z m 53.2782,0 c 26.4019,0.155 52.8286,-0.4541 79.2097,0.6356 -87.1775,98.6246 -177.141,194.8823 -261.1732,296.2608 58.8174,-99.9282 119.5433,-199.0631 181.9635,-296.8963 z m -182.6986,295.1267 c 1.3555,1.4552 -1.8208,0.9636 0,0 z m -0.4209,2.7902 c 0.3544,0.5914 -1.4486,1.2935 0,0 z"
        sodipodi:nodetypes="cscccccscscccsscccssccccsscccccccsccccccccsccscscccccccccscccccccccccccccccccccscssccccccccssscccccccsccscssccscsscccsscscscssccccsccsccccccsscscssccssccccscscccssccscccscsccss"
-       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\fullLogoGold_3950w.png"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\fullLogoWhite_full.png"
        inkscape:export-xdpi="95.978104"
        inkscape:export-ydpi="95.978104" />
     <path
-       style="fill:#c9a559;fill-opacity:1;stroke:#c9a559;stroke-width:30.5489;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:30.5489;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -1302.9227,3419.3025 v -803.958"
        id="path1126-8-9"
-       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\fullLogoGold_3950w.png"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\fullLogoWhite_full.png"
        inkscape:export-xdpi="95.978104"
        inkscape:export-ydpi="95.978104" />
     <text
        xml:space="preserve"
-       style="font-size:252.794px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:149.201px;fill:#c9a559;fill-opacity:1;stroke:none;stroke-width:1.31665;stroke-opacity:1"
+       style="font-size:252.794px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:149.201px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.31665;stroke-opacity:1"
        x="-656.27411"
        y="3431.4722"
        id="text3660-9-2"
-       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\fullLogoGold_3950w.png"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\fullLogoWhite_full.png"
        inkscape:export-xdpi="95.978104"
        inkscape:export-ydpi="95.978104"><tspan
          sodipodi:role="line"
          id="tspan3658-8-6"
-         style="fill:#c9a559;fill-opacity:1;stroke:none;stroke-width:1.31665;stroke-opacity:1"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.31665;stroke-opacity:1"
          x="-656.27411"
          y="3431.4722">LONDON</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:473.602px;line-height:1.25;font-family:Cinzel;-inkscape-font-specification:Cinzel;letter-spacing:0px;fill:#c9a559;fill-opacity:1;stroke:#c9a559;stroke-width:2.46665;stroke-opacity:1"
+       style="font-size:473.602px;line-height:1.25;font-family:Cinzel;-inkscape-font-specification:Cinzel;letter-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:2.46665;stroke-opacity:1"
        x="-1117.7489"
        y="3041.4956"
        id="text11128-9-9"
-       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\fullLogoGold_3950w.png"
+       inkscape:export-filename="C:\wamp64\www\JS Projects\carat-haus\fullLogoWhite_title.png"
        inkscape:export-xdpi="95.978104"
        inkscape:export-ydpi="95.978104"><tspan
          sodipodi:role="line"
          id="tspan11126-5-8"
-         style="fill:#c9a559;fill-opacity:1;stroke:#c9a559;stroke-width:2.46665;stroke-opacity:1"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:2.46665;stroke-opacity:1"
          x="-1117.7489"
          y="3041.4956">CARAT HAUS</tspan></text>
   </g>

@@ -30,7 +30,6 @@ export default function TimePicker({date, backToCalendar, server}) {
   const [takenSlots, setTaken] = useState([])
   
   useEffect(() => {
-    console.log('hello')
     axios.get(`${server}getBookings`)
     .then(res => {
       setTaken(res.data.filter(s=>format(new Date(s.timeslot), 'do MMM y')===format(new Date(date), 'do MMM y')))

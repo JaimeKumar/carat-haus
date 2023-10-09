@@ -11,8 +11,8 @@ import { BsArrowBarLeft } from 'react-icons/bs'
 import { RiMenuFill } from 'react-icons/ri'
 import $ from 'jquery';
 
-// const server = 'http://localhost:4000/'
-const server = 'https://ch-server-ul9n.onrender.com/'
+const server = 'http://localhost:4000/'
+// const server = 'https://ch-server-ul9n.onrender.com/'
 
 
 function App() {
@@ -28,8 +28,45 @@ function App() {
   const [bookingsRefreshing, setBookingsRefreshing] = useState(false);
   const [auth, setAuth] = useState(false);
 
-  function toggleMenu() {
-    $('.App').toggleClass('slideLeft')
+  function getBooking() {
+    axios.get(`${server}getBookings`)
+      .then(res => {
+        setAuth(true)
+        setWaitingLogin(false)
+        setLogin(false)
+        setBookings(res.data);
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
+  function tryLogin(e) {
+    e.preventDefault();
+    setWaitingLogin(true)
+    const formData = new FormData(e.target);
+    const username = formData.get('username');
+    const password = formData.get('password');
+
+    axios.post(`${server}login`, {name: username, pw: password})
+      .then(res => {
+        setAuth(true)
+        setWaitingLogin(false)
+        setLogin(false)
+        setBookings(res.data);
+      })
+      .catch(err => {
+        console.log(err)
+        setWaitingLogin(false)
+        if (err.response.data.error === 'name') {
+          loginUsername.current.style.border = '1px solid red'
+        } else if (err.response.data.error === 'pw') {
+          loginPassword.current.style.border = '1px solid red'
+        } else {
+          loginPassword.current.style.border = '1px solid red'
+          loginUsername.current.style.border = '1px solid red'
+        }
+      })
   }
 
   function deleteAppt(aptid) {
@@ -43,6 +80,10 @@ function App() {
         setBookingsRefreshing(false)
         console.log(err)
       })
+  }
+
+  function toggleMenu() {
+    $('.App').toggleClass('slideLeft')
   }
   
   function linkHome() {
@@ -87,56 +128,6 @@ function App() {
       $('#nav').css('color', 'black')
       $('#logoImg').addClass('blackImg')
     }
-  }
-
-  function getBooking() {
-    axios.get(`${server}getBookings`)
-      .then(res => {
-        setAuth(true)
-        setWaitingLogin(false)
-        setLogin(false)
-        setBookings(res.data);
-      })
-      .catch(err => {
-        setWaitingLogin(false)
-        if (err.response.data.error === 'name') {
-          loginUsername.current.style.border = '1px solid red'
-        } else if (err.response.data.error === 'pw') {
-          loginPassword.current.style.border = '1px solid red'
-        } else {
-          loginPassword.current.style.border = '1px solid red'
-          loginUsername.current.style.border = '1px solid red'
-        }
-      })
-  }
-
-  function tryLogin(e) {
-    e.preventDefault();
-    setWaitingLogin(true)
-    const formData = new FormData(e.target);
-    const username = formData.get('username');
-    const password = formData.get('password');
-
-    axios.post(`${server}login`, {name: username, pw: password})
-      .then(res => {
-        console.log(res)
-        setAuth(true)
-        setWaitingLogin(false)
-        setLogin(false)
-        setBookings(res.data);
-      })
-      .catch(err => {
-        console.log(err)
-        setWaitingLogin(false)
-        if (err.response.data.error === 'name') {
-          loginUsername.current.style.border = '1px solid red'
-        } else if (err.response.data.error === 'pw') {
-          loginPassword.current.style.border = '1px solid red'
-        } else {
-          loginPassword.current.style.border = '1px solid red'
-          loginUsername.current.style.border = '1px solid red'
-        }
-      })
   }
 
   function initInput(e) {
