@@ -12,7 +12,8 @@ import { RiMenuFill } from 'react-icons/ri'
 import $ from 'jquery';
 
 // const server = 'http://localhost:4000/'
-const server = 'https://ch-server-ul9n.onrender.com/'
+// const server = 'https://ch-server-ul9n.onrender.com/'
+const server = `https://2c2gv8lfs0.execute-api.eu-north-1.amazonaws.com/dev/`
 
 
 function App() {
@@ -48,19 +49,24 @@ function App() {
     const username = formData.get('username');
     const password = formData.get('password');
 
-    axios.post(`${server}login`, {name: username, pw: password})
+    axios.post(`${server}login`, { name: username, pw: password })
       .then(res => {
-        setAuth(true)
-        setWaitingLogin(false)
-        setLogin(false)
-        setBookings(res.data);
+        switch (res.status) {
+          case 200:
+            setAuth(true)
+            setWaitingLogin(false)
+            setLogin(false)
+            setBookings(res.data[0].appointments);
+            break;
+          case 400:
+            console.log("res: " + res)
+        }
       })
       .catch(err => {
-        console.log(err)
         setWaitingLogin(false)
-        if (err.response.data.error === 'name') {
+        if (err.response.data === 'name') {
           loginUsername.current.style.border = '1px solid red'
-        } else if (err.response.data.error === 'pw') {
+        } else if (err.response.data === 'pw') {
           loginPassword.current.style.border = '1px solid red'
         } else {
           loginPassword.current.style.border = '1px solid red'

@@ -2,7 +2,7 @@ import React from 'react'
 import {format} from "date-fns"
 
 export default function Reciept({res}) {
-    console.log(res.timeslot)
+    // console.log(res)
     const slot = new Date(res.timeslot);
   return (
     <div className="reciept">

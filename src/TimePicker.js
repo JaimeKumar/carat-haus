@@ -32,7 +32,7 @@ export default function TimePicker({date, backToCalendar, server}) {
   useEffect(() => {
     axios.get(`${server}getBookings`)
     .then(res => {
-      setTaken(res.data.filter(s=>format(new Date(s.timeslot), 'do MMM y')===format(new Date(date), 'do MMM y')))
+      setTaken(Object.values(res.data).filter(s=>format(new Date(s.timeslot), 'do MMM y')===format(new Date(date), 'do MMM y')))
     })
     .catch(err => {
       console.log(err)
@@ -84,12 +84,13 @@ export default function TimePicker({date, backToCalendar, server}) {
     if (time && name && email && number) {
       setLoading(true)
       axios.post(`${server}book`, {
-      name: name,
-      time: time,
-      email: email,
-      number: number
+        name: name,
+        time: time,
+        email: email,
+        number: number
       })
           .then(res => {
+              console.log(res)
               setLoading(false)
               setSuccess({...res.data})
             })
@@ -120,7 +121,7 @@ export default function TimePicker({date, backToCalendar, server}) {
             {timeslots?
               <div className="timeslots">
                 {timeslots.map((timeslot, i) => (
-                  <div className={(time && format(time, 'kk:mm') === format(timeslot, 'kk:mm'))? "slot selected" : "slot"} onClick={() => {setTime(timeslot); console.log('slot: ' + timeslot)}}>{format(timeslot, 'kk:mm')}</div>
+                  <div className={(time && format(time, 'kk:mm') === format(timeslot, 'kk:mm'))? "slot selected" : "slot"} onClick={() => {setTime(timeslot)}}>{format(timeslot, 'kk:mm')}</div>
                 ))}
               </div>
               : <span><small>Getting available appointment times...</small></span>
